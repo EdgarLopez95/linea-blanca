@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: var(--lh);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; }
+
+:focus-visible {
+  outline: 3px solid rgba(59, 171, 250, 0.5);
+  outline-offset: 3px;
+}
+
