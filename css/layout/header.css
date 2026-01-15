@@ -238,12 +238,19 @@
   padding: 12px 10px;
   border-radius: 10px;
   font-weight: 600;
-  color: var(--text);
-  transition: background 120ms ease;
+  color: var(--brand-dark);
+  transition: background 120ms ease, color 120ms ease;
 }
 
-.drawer__links a:hover {
+.drawer__links a:hover,
+.drawer__links a:focus-visible {
+  color: var(--brand-light);
   background: var(--surface);
+}
+
+.drawer__links a[aria-current="page"],
+.drawer__links a.is-active {
+  color: var(--brand-light);
 }
 
 .nav__actions {
@@ -347,14 +354,21 @@
 
   .drawer__links a {
     padding: 8px 10px;
-    color: var(--text);
+    color: var(--brand-dark);
     font-weight: 600;
+    background: transparent;
+    transition: color 120ms ease;
+  }
+
+  .drawer__links a:hover,
+  .drawer__links a:focus-visible {
+    color: var(--brand-light);
     background: transparent;
   }
 
-  .drawer__links a:hover {
-    color: var(--primary);
-    background: transparent;
+  .drawer__links a[aria-current="page"],
+  .drawer__links a.is-active {
+    color: var(--brand-light);
   }
 
   .nav__actions {
