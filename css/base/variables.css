@@ -30,3 +30,9 @@
   :root { --px: 20px; }
 }
 
+@media (max-width: 767px) {
+  :root {
+    --header-height: 73px;
+  }
+}
+

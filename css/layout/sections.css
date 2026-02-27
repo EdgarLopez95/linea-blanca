@@ -32,14 +32,14 @@
   color: white;
 }
 
-/* --- Solo mobile: altura estable, centrado y espaciado compacto (desktop no se toca) --- */
+/* --- Solo mobile: altura = viewport menos header, sin scroll extra (desktop no se toca) --- */
 @media (max-width: 767px) {
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    max-height: 100vh;
-    max-height: 100svh;
-    padding: 24px var(--px) 28px;
+    min-height: calc(100vh - var(--header-height, 73px));
+    min-height: calc(100svh - var(--header-height, 73px));
+    max-height: calc(100vh - var(--header-height, 73px));
+    max-height: calc(100dvh - var(--header-height, 73px));
+    padding: 20px var(--px) 24px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
