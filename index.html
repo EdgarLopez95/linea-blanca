@@ -95,10 +95,20 @@
       <div class="nav__overlay"></div>
 
       <div class="nav__menu" id="navMenu">
-        <button class="nav__close" type="button" aria-label="Cerrar menú">
-          <span class="sr-only">Cerrar menú</span>
-          ✕
-        </button>
+        <div class="drawer__top">
+          <a class="drawer__brand" href="#top" aria-label="Ir al inicio">
+            <img
+              src="assets/img/logos/logo-original.svg"
+              alt="Línea Blanca - Servicio técnico en Palmira"
+              width="140"
+              height="47"
+            />
+          </a>
+          <button class="nav__close" type="button" aria-label="Cerrar menú">
+            <span class="sr-only">Cerrar menú</span>
+            ✕
+          </button>
+        </div>
 
         <div class="drawer__header">
           <h2 class="drawer__title">Servicio técnico en Palmira</h2>
@@ -124,7 +134,7 @@
 
         <div class="drawer__links">
           <a href="#services">Servicios</a>
-          <a href="#process">Cómo trabajamos</a>
+          <a href="#como-trabajamos">Cómo trabajamos</a>
           <a href="#gallery">Trabajos</a>
           <a href="#testimonials">Reseñas</a>
           <a href="#location">Ubicación</a>
@@ -139,16 +149,6 @@
         </div>
       </div>
     </nav>
-
-    <a class="header__cta-mobile"
-       href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20una%20reparación%20en%20Palmira"
-       target="_blank" rel="noopener"
-       aria-label="Contactar por WhatsApp">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-      </svg>
-      <span class="sr-only">WhatsApp</span>
-    </a>
 
   </div>
 
@@ -209,126 +209,168 @@
         <h2 id="brands-title" class="brands__title">Somos expertos en las mejores marcas</h2>
         <p class="brands__subtitle">Diagnóstico preciso y reparación segura, sin improvisar.</p>
 
-        <div class="brands__logos" role="list">
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/abba.png"
-              alt="Servicio técnico Abba en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
+        <div class="brands__track" aria-hidden="true">
+          <div class="brands__track-inner">
+          <div class="brands__logos" role="list">
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/abba.png"
+                alt="Servicio técnico Abba en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/centrales.png"
+                alt="Servicio técnico Centrales en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/challenger.png"
+                alt="Servicio técnico Challenger en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/daewoo.png"
+                alt="Servicio técnico Daewoo en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/electrolux.png"
+                alt="Servicio técnico Electrolux en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/haceb.png"
+                alt="Servicio técnico Haceb en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/lg.png"
+                alt="Servicio técnico LG en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/mabe.png"
+                alt="Servicio técnico Mabe en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/olimpo.png"
+                alt="Servicio técnico Olimpo en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/panasonic.png"
+                alt="Servicio técnico Panasonic en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/samsung.png"
+                alt="Servicio técnico Samsung en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img
+                src="assets/img/logos/whirlpool.png"
+                alt="Servicio técnico Whirlpool en Palmira"
+                width="120"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/centrales.png"
-              alt="Servicio técnico Centrales en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
+          <div class="brands__logos" role="list" aria-hidden="true">
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/abba.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/centrales.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/challenger.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/daewoo.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/electrolux.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/haceb.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/lg.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/mabe.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/olimpo.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/panasonic.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/samsung.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
+            <div class="brands__logo" role="listitem">
+              <img src="assets/img/logos/whirlpool.png" alt="" width="120" height="44" loading="lazy" decoding="async" />
+            </div>
           </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/challenger.png"
-              alt="Servicio técnico Challenger en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/daewoo.png"
-              alt="Servicio técnico Daewoo en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/electrolux.png"
-              alt="Servicio técnico Electrolux en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/haceb.png"
-              alt="Servicio técnico Haceb en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/lg.png"
-              alt="Servicio técnico LG en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/mabe.png"
-              alt="Servicio técnico Mabe en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/olimpo.png"
-              alt="Servicio técnico Olimpo en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/panasonic.png"
-              alt="Servicio técnico Panasonic en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/samsung.png"
-              alt="Servicio técnico Samsung en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="brands__logo" role="listitem">
-            <img
-              src="assets/img/logos/whirlpool.png"
-              alt="Servicio técnico Whirlpool en Palmira"
-              width="120"
-              height="44"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
 
@@ -338,158 +380,205 @@
 
     <section id="video" class="section video-reel">
       <div class="container video-reel__inner">
-        <div class="video-reel__content">
-          <h2 class="video-reel__title">Nuestros trabajos</h2>
-          <p class="video-reel__text">Conoce cómo trabajamos y los resultados que obtenemos en cada reparación.</p>
-          <ul class="video-reel__bullets">
-            <li>Reparaciones documentadas paso a paso</li>
-            <li>Resultados reales de nuestros clientes</li>
-            <li>Procesos transparentes y profesionales</li>
-          </ul>
+        <div class="video-reel__player-wrap">
+          <div class="video-reel__player">
+            <video
+              class="video-reel__video"
+              src="assets/video/reel.mp4"
+              muted
+              playsinline
+              preload="metadata"
+              loop
+            ></video>
+            <button
+              class="video-reel__mute"
+              type="button"
+              aria-label="Activar sonido"
+              aria-pressed="false"
+            >
+              <svg class="video-reel__mute-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+              <svg class="video-reel__mute-icon video-reel__mute-icon--hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div class="video-reel__player">
-          <video
-            class="video-reel__video"
-            src="assets/video/reel.mp4"
-            muted
-            playsinline
-            preload="metadata"
-            loop
-          ></video>
-          <button
-            class="video-reel__mute"
-            type="button"
-            aria-label="Activar sonido"
-            aria-pressed="false"
-          >
-            <svg class="video-reel__mute-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-              <line x1="23" y1="9" x2="17" y2="15"></line>
-              <line x1="17" y1="9" x2="23" y2="15"></line>
-            </svg>
-            <svg class="video-reel__mute-icon video-reel__mute-icon--hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-            </svg>
-          </button>
+        <div class="video-reel__content">
+          <h2 class="video-reel__title">¿Tu electrodoméstico está fallando?</h2>
+          
+          <div class="video-reel__cards">
+            <article class="video-reel__card">
+              <div class="video-reel__card-icon video-reel__card-icon--cold" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <h3 class="video-reel__card-title">No enfría</h3>
+              <p class="video-reel__card-text">Posible falla en gas, compresor o termostato.</p>
+              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20no%20enfría,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+            </article>
+            <article class="video-reel__card">
+              <div class="video-reel__card-icon video-reel__card-icon--spin" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8M8 12h8"/></svg>
+              </div>
+              <h3 class="video-reel__card-title">No centrifuga</h3>
+              <p class="video-reel__card-text">Problemas en motor, bomba o tarjeta lógica.</p>
+              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20lavadora%20no%20centrifuga,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+            </article>
+            <article class="video-reel__card">
+              <div class="video-reel__card-icon video-reel__card-icon--noise" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              </div>
+              <h3 class="video-reel__card-title">Hace mucho ruido</h3>
+              <p class="video-reel__card-text">Desgaste en rodamientos o soportes sueltos.</p>
+              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20hace%20mucho%20ruido,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+            </article>
+            <article class="video-reel__card">
+              <div class="video-reel__card-icon video-reel__card-icon--leak" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z"/></svg>
+              </div>
+              <h3 class="video-reel__card-title">Tiene fugas</h3>
+              <p class="video-reel__card-text">Mangueras rotas, sellos vencidos o filtros.</p>
+              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20tiene%20fugas,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+            </article>
+          </div>
+          <div class="video-reel__cta">
+            <div class="video-reel__cta-text">
+              <strong>¿Otro problema?</strong>
+              <span>Cuéntanos qué le pasa a tu equipo y te orientamos.</span>
+            </div>
+            <a class="video-reel__cta-btn" href="https://wa.me/573183180948?text=Hola,%20tengo%20un%20problema%20con%20mi%20electrodoméstico,%20necesito%20orientación%20en%20Palmira" target="_blank" rel="noopener">Escríbenos ahora</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="services" class="section services" aria-labelledby="services-title">
-      <div class="container">
-        <h2 id="services-title" class="services__title">Servicios que reparamos</h2>
-        <p class="services__subtitle">Diagnóstico preciso y reparación segura, sin improvisar.</p>
+      <div class="container services__container">
+        <h2 id="services-title" class="services__title">Nuestros Servicios</h2>
+        <p class="services__subtitle">Soluciones integrales para el hogar y negocio. Selecciona el servicio que necesitas.</p>
 
         <div class="services__grid">
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Refrigerator -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <path d="M5 8h14"></path>
-                <path d="M5 12h14"></path>
-                <path d="M9 2v20"></path>
-                <path d="M15 2v20"></path>
-              </svg>
+          <article class="services__card services__card--fridge">
+            <div class="services__media">
+              <img src="assets/img/gallery/hero-bg.jpg" alt="Neveras y Refrigeración" loading="lazy" />
             </div>
-            <h3 class="service-card__title">Neveras</h3>
-            <p class="service-card__text">Enfriamiento, fugas y compresor.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20nevera%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
+            <div class="services__body">
+              <h3 class="services__name">Neveras y Refrigeración</h3>
+              <p class="services__desc">Restaura el frío y conserva tus alimentos con servicio rápido y garantizado el mismo día.</p>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20solicitar%20servicio%20de%20nevera%20en%20Palmira" target="_blank" rel="noopener">Solicitar servicio</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Washing Machine / Circle -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="12" cy="12" r="5"></circle>
-                <path d="M12 7v10"></path>
-                <path d="M7 12h10"></path>
-              </svg>
+          <article class="services__card services__card--wash">
+            <div class="services__media">
+              <img src="assets/img/gallery/hero-bg.jpg" alt="Lavadoras" loading="lazy" />
             </div>
-            <h3 class="service-card__title">Lavadoras</h3>
-            <p class="service-card__text">Centrifugado, ruido y tarjetas.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20lavadora%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
+            <div class="services__body">
+              <h3 class="services__name">Lavadoras</h3>
+              <p class="services__desc">Deja tu ropa impecable de nuevo. Reparación experta y solución a problemas de centrifugado.</p>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20reparación%20de%20lavadora%20en%20Palmira" target="_blank" rel="noopener">Agendar →</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Snowflake -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="12" x2="12" y1="2" y2="22"></line>
-                <line x1="17" x2="7" y1="12" y2="12"></line>
-                <line x1="6.34" x2="17.66" y1="6.34" y2="17.66"></line>
-                <line x1="6.34" x2="17.66" y1="17.66" y2="6.34"></line>
-                <line x1="19.07" x2="4.93" y1="4.93" y2="19.07"></line>
-                <line x1="19.07" x2="4.93" y1="19.07" y2="4.93"></line>
-              </svg>
+          <article class="services__card services__card--air">
+            <div class="services__media">
+              <img src="assets/img/gallery/hero-bg.jpg" alt="Aires Acondicionados" loading="lazy" />
             </div>
-            <h3 class="service-card__title">Aires acondicionados</h3>
-            <p class="service-card__text">Carga de gas, limpieza y reparación.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20aire%20acondicionado%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
+            <div class="services__body">
+              <h3 class="services__name">Aires Acondicionados</h3>
+              <p class="services__desc">Disfruta del clima ideal en tu hogar con nuestro mantenimiento y reparación profunda.</p>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20aire%20acondicionado%20en%20Palmira" target="_blank" rel="noopener">Cotizar →</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Refrigerator (double door) -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="2" width="18" height="20" rx="2" ry="2"></rect>
-                <path d="M3 8h18"></path>
-                <path d="M3 12h18"></path>
-                <path d="M3 16h18"></path>
-                <path d="M12 2v20"></path>
-              </svg>
+          <article class="services__card services__card--maint">
+            <div class="services__media">
+              <img src="assets/img/gallery/hero-bg.jpg" alt="Mantenimiento Preventivo" loading="lazy" />
             </div>
-            <h3 class="service-card__title">Nevecones</h3>
-            <p class="service-card__text">Diagnóstico premium a domicilio.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20nevecon%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
+            <div class="services__body">
+              <h3 class="services__name">Mantenimiento Preventivo</h3>
+              <p class="services__desc">Alarga la vida útil de tus equipos y evita fallas costosas con revisiones periódicas.</p>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20mantenimiento%20preventivo%20en%20Palmira" target="_blank" rel="noopener">Agendar →</a>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Settings / Cog -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
+          <article class="services__card services__card--parts services__card--wide">
+            <div class="services__media">
+              <img src="assets/img/gallery/hero-bg.jpg" alt="Venta de Repuestos Originales" loading="lazy" />
             </div>
-            <h3 class="service-card__title">Repuestos</h3>
-            <p class="service-card__text">Venta de repuestos originales y compatibles.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20repuestos%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
+            <div class="services__body">
+              <h3 class="services__name">Venta de Repuestos Originales</h3>
+              <p class="services__desc">Encuentra piezas genuinas para tus electrodomésticos. Si eres técnico o quieres repararlo tú mismo.</p>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20ver%20repuestos%20disponibles%20en%20Palmira" target="_blank" rel="noopener">Ver repuestos</a>
+            </div>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="service-card">
-            <div class="service-card__accent"></div>
-            <div class="service-card__icon">
-              <!-- Lucide: Shield Check -->
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                <path d="m9 12 2 2 4-4"></path>
-              </svg>
+    <section id="como-trabajamos" class="section process" aria-labelledby="process-title">
+      <div class="container">
+        <h2 id="process-title" class="process__title">Así trabajamos</h2>
+        <p class="process__subtitle">Un proceso simple para que tu equipo vuelva a funcionar rápido y con garantía.</p>
+
+        <ol class="process__timeline" role="list">
+          <li class="process__item">
+            <div class="process__node">1</div>
+            <div class="process__content">
+              <div class="process-card__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </div>
+              <h3 class="process-card__title">1. Diagnóstico</h3>
+              <p class="process-card__text">Nos cuentas la falla por WhatsApp o llamada. Si aplica, agendamos visita a domicilio o revisamos en taller para identificar la causa real.</p>
+              <p class="process-card__note">Puedes enviar foto o video del problema para agilizar.</p>
             </div>
-            <h3 class="service-card__title">Mantenimiento preventivo</h3>
-            <p class="service-card__text">Evita fallas y alarga la vida útil.</p>
-            <a class="service-card__link" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20mantenimiento%20preventivo%20en%20Palmira" target="_blank" rel="noopener">
-              Cotizar
-            </a>
-          </article>
+          </li>
+
+          <li class="process__item">
+            <div class="process__node">2</div>
+            <div class="process__content">
+              <div class="process-card__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8"></path>
+                  <path d="M16 17H8"></path>
+                  <path d="M10 9H8"></path>
+                </svg>
+              </div>
+              <h3 class="process-card__title">2. Cotización transparente</h3>
+              <p class="process-card__text">Te damos una cotización clara antes de reparar. Te explicamos qué tiene, qué se cambia y cuánto cuesta.</p>
+            </div>
+          </li>
+
+          <li class="process__item">
+            <div class="process__node">3</div>
+            <div class="process__content">
+              <div class="process-card__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3 class="process-card__title">3. Reparación y garantía</h3>
+              <p class="process-card__text">Realizamos la reparación con repuestos de calidad, hacemos pruebas de funcionamiento y entregamos garantía por el trabajo realizado.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="process__cta">
+          <p class="process__cta-text">¿Listo para agendar? Te respondemos rápido.</p>
+          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20una%20reparación%20en%20Palmira" target="_blank" rel="noopener">
+            Agendar por WhatsApp
+          </a>
         </div>
       </div>
     </section>

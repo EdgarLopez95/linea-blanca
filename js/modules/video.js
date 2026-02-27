@@ -10,8 +10,6 @@ export function initVideo() {
     return;
   }
 
-  let userUnmuted = false; // Persistir decisión del usuario
-
   /**
    * Actualiza el estado visual del botón de mute
    */
@@ -28,7 +26,6 @@ export function initVideo() {
    */
   function toggleMute() {
     video.muted = !video.muted;
-    userUnmuted = !video.muted; // Persistir decisión del usuario
     updateMuteButton();
   }
 
@@ -45,12 +42,8 @@ export function initVideo() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Video está visible, reproducir
-          video.play().catch(error => {
-            console.warn('Error al reproducir video:', error);
-          });
+          video.play().catch(() => {});
         } else {
-          // Video no está visible, pausar
           video.pause();
         }
       });
@@ -59,33 +52,24 @@ export function initVideo() {
     observer.observe(video);
   }
 
-  /**
-   * Inicializa el video
-   */
   function init() {
-    // Configurar video
-    video.muted = true; // Muted por defecto para permitir autoplay
+    video.muted = true;
     video.loop = true;
     video.playsInline = true;
 
-    // Actualizar botón inicial
     updateMuteButton();
 
-    // Event listeners
     if (muteBtn) {
       muteBtn.addEventListener('click', toggleMute);
     }
 
-    // Configurar IntersectionObserver
     setupIntersectionObserver();
 
-    // Manejar errores del video
     video.addEventListener('error', (e) => {
       console.error('Error en el video:', e);
     });
   }
 
-  // Inicializar cuando el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
