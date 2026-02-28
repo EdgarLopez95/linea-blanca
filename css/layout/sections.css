@@ -1040,7 +1040,7 @@
 /* Process Section (Cómo trabajamos) */
 .process {
   padding: 60px var(--px);
-  background: var(--bg);
+  background: #edf0f5;
 }
 
 .process__title {
