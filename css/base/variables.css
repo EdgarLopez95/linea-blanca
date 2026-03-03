@@ -1,17 +1,27 @@
 :root {
+  /* Colors */
   --bg: #ffffff;
   --text: #052456;
   --muted: #5b6473;
   --primary: #3babfa;
+  --primary-hover: #2a9ae8;
   --primary-700: #052456;
   --border: #e6eaf0;
+  --border-hover: #cfd6e2;
   --surface: #f6f8fb;
 
   --brand-dark: #052456;
+  --brand-dark-hover: #041a38;
   --brand-light: #3babfa;
 
+  /* Spacing / layout */
   --radius: 14px;
   --shadow: 0 12px 30px rgba(5, 36, 86, 0.12);
+  --section-padding-y: 60px;
+  --section-padding-y-mobile: 48px;
+  --section-padding-bottom-mobile: 56px;
+  --focus-ring: 3px solid rgba(59, 171, 250, 0.5);
+  --focus-ring-offset: 3px;
 
   --container: 1120px;
   --px: 16px;

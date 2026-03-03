@@ -18,7 +18,7 @@
   left: -999px;
   top: 12px;
   background: var(--primary-700);
-  color: white;
+  color: #fff;
   padding: 10px 12px;
   border-radius: 10px;
   z-index: 9999;

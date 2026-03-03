@@ -30,26 +30,31 @@ export function initVideo() {
   }
 
   /**
-   * Maneja la visibilidad del video con IntersectionObserver
+   * Reproduce o pausa según visibilidad (muted = permitido por políticas de autoplay)
+   */
+  function setPlaying(play) {
+    if (play) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }
+
+  /**
+   * Observa el contenedor del reproductor para play/pause según visibilidad.
+   * threshold 0 = dispara en cuanto cualquier parte es visible.
    */
   function setupIntersectionObserver() {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5 // 50% visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, observerOptions);
-
-    observer.observe(video);
+    const container = video.closest('.video-reel__player-wrap') || video;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setPlaying(entry.isIntersecting);
+        });
+      },
+      { root: null, rootMargin: '0px', threshold: 0 }
+    );
+    observer.observe(container);
   }
 
   function init() {
@@ -67,6 +72,10 @@ export function initVideo() {
 
     video.addEventListener('error', (e) => {
       console.error('Error en el video:', e);
+    });
+
+    requestAnimationFrame(() => {
+      setPlaying(true);
     });
   }
 

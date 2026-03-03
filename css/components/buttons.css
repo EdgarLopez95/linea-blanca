@@ -15,11 +15,11 @@
 .btn:active { transform: translateY(1px); }
 
 .btn--primary {
-  background: #3babfa;
-  color: white;
+  background: var(--primary);
+  color: #fff;
 }
 
-.btn--primary:hover { background: #2a9ae8; }
+.btn--primary:hover { background: var(--primary-hover); }
 
 .btn--ghost {
   background: transparent;
@@ -27,17 +27,17 @@
   color: var(--text);
 }
 
-.btn--ghost:hover { border-color: #cfd6e2; }
+.btn--ghost:hover { border-color: var(--border-hover); }
 
 .btn--instagram {
   background: var(--brand-dark);
-  color: white;
+  color: #fff;
   box-shadow: 0 4px 14px rgba(5, 36, 86, 0.25);
   padding: 14px 22px;
 }
 
 .btn--instagram:hover {
-  background: #041a38;
+  background: var(--brand-dark-hover);
   box-shadow: 0 6px 18px rgba(5, 36, 86, 0.3);
 }
 

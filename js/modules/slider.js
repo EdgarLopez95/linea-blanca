@@ -8,7 +8,7 @@ export function initCoverflowSlider() {
 
   const slides = container.querySelectorAll('[data-slide]');
   const dotsWrapper = container.querySelector('[data-dots]');
-  const dots = dotsWrapper ? dotsWrapper.querySelectorAll('.dot') : [];
+  const dots = dotsWrapper ? Array.from(dotsWrapper.querySelectorAll('.dot')) : [];
 
   const total = slides.length;
   if (total === 0) return;
@@ -52,16 +52,12 @@ export function initCoverflowSlider() {
   if (prevBtn) prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
   if (nextBtn) nextBtn.addEventListener('click', () => updateSlider(currentIndex + 1));
 
-  // Click en imagen izquierda (.prev) -> anterior
+  // Click en slide lateral: .prev -> anterior, .next -> siguiente
   container.addEventListener('click', (e) => {
-    const slide = e.target.closest('.slide.prev');
-    if (slide) updateSlider(currentIndex - 1);
-  });
-
-  // Click en imagen derecha (.next) -> siguiente
-  container.addEventListener('click', (e) => {
-    const slide = e.target.closest('.slide.next');
-    if (slide) updateSlider(currentIndex + 1);
+    const prevSlide = e.target.closest('.slide.prev');
+    const nextSlide = e.target.closest('.slide.next');
+    if (prevSlide) updateSlider(currentIndex - 1);
+    else if (nextSlide) updateSlider(currentIndex + 1);
   });
 
   // Swipe en móvil: touchstart / touchend
