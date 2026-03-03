@@ -183,11 +183,6 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
-.btn--full {
-  width: 100%;
-  justify-content: center;
-}
-
 /* Drawer Badges */
 .drawer__badges {
   padding: 16px 20px;

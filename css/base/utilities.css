@@ -25,3 +25,22 @@
 }
 .skip-link:focus { left: 12px; }
 
+/* Enlaces internos contextuales (estilo link, no botón) */
+.link-internal {
+  color: var(--brand-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.link-internal:hover {
+  color: var(--brand-dark);
+}
+
+.link-internal:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: 2px;
+}

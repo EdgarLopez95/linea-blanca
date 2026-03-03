@@ -1,43 +1,105 @@
+/*
+ * Botones globales: primario (WhatsApp), secundario/ghost (Llamar).
+ * Variantes: .btn--large (hero/CTAs principales), .btn--small (cards, sticky).
+ * Sin estilos inline en CTAs; hover/active/focus consistentes.
+ */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 700;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-weight: 600;
   font-size: 0.95rem;
+  line-height: 1.3;
+  text-decoration: none;
   cursor: pointer;
-  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, color 120ms ease;
+  box-sizing: border-box;
 }
 
-.btn:active { transform: translateY(1px); }
+.btn:active {
+  transform: translateY(1px);
+}
 
+.btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Primario: WhatsApp / Agendar (mismo estilo que hero) */
 .btn--primary {
   background: var(--primary);
   color: #fff;
+  border-color: var(--primary);
 }
 
-.btn--primary:hover { background: var(--primary-hover); }
+.btn--primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
 
+/* Secundario / outline: Llamar (consistente con hero) */
 .btn--ghost {
   background: transparent;
   border-color: var(--border);
   color: var(--text);
 }
 
-.btn--ghost:hover { border-color: var(--border-hover); }
+.btn--ghost:hover {
+  border-color: var(--border-hover);
+  background: var(--surface);
+  color: var(--text);
+}
 
+/* Alias semántico */
+.btn--secondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn--secondary:hover {
+  border-color: var(--border-hover);
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Grande: hero, CTAs principales */
+.btn--large {
+  padding: 16px 24px;
+  font-size: 1.05rem;
+}
+
+/* Pequeño: cards de servicios, sticky bar */
+.btn--small {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+/* Full width en contenedor (móvil) */
+.btn--full {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* Instagram (footer/social): mantener identidad */
 .btn--instagram {
   background: var(--brand-dark);
   color: #fff;
+  border-color: var(--brand-dark);
   box-shadow: 0 4px 14px rgba(5, 36, 86, 0.25);
   padding: 14px 22px;
 }
 
 .btn--instagram:hover {
   background: var(--brand-dark-hover);
+  border-color: var(--brand-dark-hover);
   box-shadow: 0 6px 18px rgba(5, 36, 86, 0.3);
+  color: #fff;
 }
-

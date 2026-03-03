@@ -17,9 +17,9 @@
   /* Spacing / layout */
   --radius: 14px;
   --shadow: 0 12px 30px rgba(5, 36, 86, 0.12);
-  --section-padding-y: 60px;
-  --section-padding-y-mobile: 48px;
-  --section-padding-bottom-mobile: 56px;
+  --section-padding-y: 64px;
+  --section-padding-y-tablet: 48px;
+  --section-padding-y-mobile: 32px;
   --focus-ring: 3px solid rgba(59, 171, 250, 0.5);
   --focus-ring-offset: 3px;
 
