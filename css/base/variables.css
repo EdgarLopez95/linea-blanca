@@ -24,15 +24,27 @@
   --lh: 1.5;
 
   --font: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Altura del header para compensar cuando está fixed (desktop por defecto) */
+  --header-height: 120px;
 }
 
 @media (min-width: 768px) {
   :root { --px: 20px; }
 }
 
+@media (max-width: 1200px) and (min-width: 768px) {
+  :root {
+    --px: 16px;
+    --header-height: 120px;
+  }
+}
+
 @media (max-width: 767px) {
   :root {
     --header-height: 73px;
+    /* Títulos principales (h2) de sección en móvil – más grandes */
+    --section-title-mobile: 1.75rem;
   }
 }
 

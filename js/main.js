@@ -1,9 +1,10 @@
 import { initMenu } from './modules/menu.js';
 import { initVideo } from './modules/video.js';
+import { initCoverflowSlider } from './modules/slider.js';
 
-// Inicializar módulos cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initVideo();
+  initCoverflowSlider();
 });
 

@@ -29,3 +29,15 @@
 
 .btn--ghost:hover { border-color: #cfd6e2; }
 
+.btn--instagram {
+  background: var(--brand-dark);
+  color: white;
+  box-shadow: 0 4px 14px rgba(5, 36, 86, 0.25);
+  padding: 14px 22px;
+}
+
+.btn--instagram:hover {
+  background: #041a38;
+  box-shadow: 0 6px 18px rgba(5, 36, 86, 0.3);
+}
+
