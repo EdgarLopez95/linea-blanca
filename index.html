@@ -110,19 +110,11 @@
           </button>
         </div>
 
-        <div class="drawer__header">
-          <h2 class="drawer__title">Servicio técnico en Palmira</h2>
-          <p class="drawer__subtitle">Respuesta rápida por WhatsApp</p>
-        </div>
-
         <div class="drawer__cta">
           <a class="btn btn--primary btn--full"
-             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20una%20reparación%20en%20Palmira"
+             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
              target="_blank" rel="noopener">
-            Cotizar por WhatsApp
-          </a>
-          <a class="btn btn--ghost btn--full" href="tel:+573183180948">
-            Llamar
+            Agendar por WhatsApp
           </a>
         </div>
 
@@ -134,8 +126,6 @@
 
         <div class="drawer__links">
           <a href="#services">Servicios</a>
-          <a href="#como-trabajamos">Cómo trabajamos</a>
-          <a href="#galeria">Trabajos</a>
           <a href="#testimonials">Reseñas</a>
           <a href="#faq">Preguntas</a>
           <a href="#location">Ubicación</a>
@@ -143,9 +133,9 @@
 
         <div class="nav__actions">
           <a class="btn btn--primary"
-             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20una%20reparación%20en%20Palmira"
+             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
              target="_blank" rel="noopener">
-            WhatsApp
+            Agendar por WhatsApp
           </a>
         </div>
       </div>
@@ -181,26 +171,25 @@
               </svg>
               Garantía por escrito
             </li>
-            <li>
-              <svg class="hero__badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              Técnicos certificados
-            </li>
           </ul>
 
           <div class="hero__cta">
             <a class="btn btn--primary btn--large"
-               href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20una%20reparación%20en%20Palmira"
+               href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
                target="_blank" rel="noopener">
-              Cotizar por WhatsApp
+              Agendar por WhatsApp
             </a>
-            <a class="btn btn--ghost btn--large" href="tel:+573183180948">
-              Llamar ahora
-            </a>
+            <a class="btn btn--ghost btn--large" href="tel:+573183180948">Llamar ahora</a>
           </div>
 
-          <p class="hero__microcopy">Respuesta rápida · Lun–Vie 8–12 / 2–5 · Sáb 8–12</p>
+          <div class="hero__answer" id="hero-answer" data-expanded="false">
+            <p class="hero__answer-text" id="hero-answer-text">
+              <span class="hero__answer-more">Te ayudamos hoy mismo en Palmira y alrededores. </span>
+              <span class="hero__answer-short">Diagnóstico rápido por WhatsApp, repuestos de calidad y garantía por escrito en Palmira y alrededores.</span>
+              <span class="hero__answer-more">Reparamos neveras, lavadoras, enfriadores y aires acondicionados a domicilio o en nuestro local. Escríbenos y te orientamos con el costo estimado antes de agendar.</span>
+            </p>
+            <button type="button" class="hero__answer-toggle" aria-expanded="false" aria-controls="hero-answer-text" id="hero-answer-toggle">Ver más</button>
+          </div>
         </div>
       </div>
     </section>
@@ -420,7 +409,7 @@
               </div>
               <h3 class="video-reel__card-title">No enfría</h3>
               <p class="video-reel__card-text">Posible falla en gas, compresor o termostato.</p>
-              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20no%20enfría,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+              <span class="video-reel__card-hint">Agendar</span>
             </article>
             <article class="video-reel__card">
               <div class="video-reel__card-icon video-reel__card-icon--spin" aria-hidden="true">
@@ -428,7 +417,7 @@
               </div>
               <h3 class="video-reel__card-title">No centrifuga</h3>
               <p class="video-reel__card-text">Problemas en motor, bomba o tarjeta lógica.</p>
-              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20lavadora%20no%20centrifuga,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+              <span class="video-reel__card-hint">Agendar</span>
             </article>
             <article class="video-reel__card">
               <div class="video-reel__card-icon video-reel__card-icon--noise" aria-hidden="true">
@@ -436,7 +425,7 @@
               </div>
               <h3 class="video-reel__card-title">Hace mucho ruido</h3>
               <p class="video-reel__card-text">Desgaste en rodamientos o soportes sueltos.</p>
-              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20hace%20mucho%20ruido,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+              <span class="video-reel__card-hint">Agendar</span>
             </article>
             <article class="video-reel__card">
               <div class="video-reel__card-icon video-reel__card-icon--leak" aria-hidden="true">
@@ -444,7 +433,7 @@
               </div>
               <h3 class="video-reel__card-title">Tiene fugas</h3>
               <p class="video-reel__card-text">Mangueras rotas, sellos vencidos o filtros.</p>
-              <a class="video-reel__card-link" href="https://wa.me/573183180948?text=Hola,%20mi%20electrodoméstico%20tiene%20fugas,%20quiero%20diagnóstico%20en%20Palmira" target="_blank" rel="noopener">Diagnosticar ahora →</a>
+              <span class="video-reel__card-hint">Agendar</span>
             </article>
           </div>
           <div class="video-reel__cta">
@@ -452,7 +441,7 @@
               <strong>¿Otro problema?</strong>
               <span>Cuéntanos qué le pasa a tu equipo y te orientamos.</span>
             </div>
-            <a class="video-reel__cta-btn" href="https://wa.me/573183180948?text=Hola,%20tengo%20un%20problema%20con%20mi%20electrodoméstico,%20necesito%20orientación%20en%20Palmira" target="_blank" rel="noopener">Escríbenos ahora</a>
+            <a class="video-reel__cta-btn btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
           </div>
         </div>
       </div>
@@ -513,9 +502,7 @@
 
         <div class="process__cta">
           <p class="process__cta-text">¿Listo para agendar? Te respondemos rápido.</p>
-          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20una%20reparación%20en%20Palmira" target="_blank" rel="noopener">
-            Agendar por WhatsApp
-          </a>
+          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -533,7 +520,7 @@
             <div class="services__body">
               <h3 class="services__name">Neveras y Refrigeración</h3>
               <p class="services__desc">Restaura el frío y conserva tus alimentos con servicio rápido y garantizado el mismo día.</p>
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20solicitar%20servicio%20de%20nevera%20en%20Palmira" target="_blank" rel="noopener">Solicitar servicio</a>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar</a>
             </div>
           </article>
 
@@ -544,7 +531,7 @@
             <div class="services__body">
               <h3 class="services__name">Lavadoras</h3>
               <p class="services__desc">Deja tu ropa impecable de nuevo. Reparación experta y solución a problemas de centrifugado.</p>
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20reparación%20de%20lavadora%20en%20Palmira" target="_blank" rel="noopener">Agendar →</a>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar</a>
             </div>
           </article>
 
@@ -555,7 +542,7 @@
             <div class="services__body">
               <h3 class="services__name">Aires Acondicionados</h3>
               <p class="services__desc">Disfruta del clima ideal en tu hogar con nuestro mantenimiento y reparación profunda.</p>
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20reparación%20de%20aire%20acondicionado%20en%20Palmira" target="_blank" rel="noopener">Cotizar →</a>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar</a>
             </div>
           </article>
 
@@ -566,7 +553,7 @@
             <div class="services__body">
               <h3 class="services__name">Mantenimiento Preventivo</h3>
               <p class="services__desc">Alarga la vida útil de tus equipos y evita fallas costosas con revisiones periódicas.</p>
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20agendar%20mantenimiento%20preventivo%20en%20Palmira" target="_blank" rel="noopener">Agendar →</a>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar</a>
             </div>
           </article>
 
@@ -577,9 +564,45 @@
             <div class="services__body">
               <h3 class="services__name">Venta de Repuestos Originales</h3>
               <p class="services__desc">Encuentra piezas genuinas para tus electrodomésticos. Si eres técnico o quieres repararlo tú mismo.</p>
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20ver%20repuestos%20disponibles%20en%20Palmira" target="_blank" rel="noopener">Ver repuestos</a>
+              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="garantia" class="section garantia" aria-labelledby="garantia-title">
+      <div class="container">
+        <h2 id="garantia-title" class="garantia__title">Garantía y respaldo en cada servicio</h2>
+        <p class="garantia__subtitle">Trabajamos con diagnóstico claro, repuestos de calidad y garantía por escrito. Queremos que quedes tranquilo desde el primer contacto.</p>
+        <ul class="garantia__list" role="list">
+          <li class="garantia__item">
+            <span class="garantia__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </span>
+            Garantía por escrito
+          </li>
+          <li class="garantia__item">
+            <span class="garantia__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            Pruebas de funcionamiento antes de entregar
+          </li>
+          <li class="garantia__item">
+            <span class="garantia__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </span>
+            Diagnóstico claro (sin sorpresas)
+          </li>
+          <li class="garantia__item">
+            <span class="garantia__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Atención en Palmira y alrededores
+          </li>
+        </ul>
+        <div class="garantia__cta">
+          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -597,12 +620,12 @@
               <span class="testimonial-card__star">★</span>
               <span class="testimonial-card__star">★</span>
             </div>
-            <blockquote class="testimonial-card__quote">Excelente servicio, llegaron puntual a mi casa en Palmira y arreglaron mi lavadora el mismo día. Muy recomendados.</blockquote>
+            <blockquote class="testimonial-card__quote">Muy buen servicio. Atienden muy rápido y manejan buenos precios. Recomendado.</blockquote>
             <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">CR</span>
+              <span class="testimonial-card__avatar" aria-hidden="true">EL</span>
               <div>
-                <cite class="testimonial-card__name">Carlos Ramírez</cite>
-                <p class="testimonial-card__service">Reparación Lavadora</p>
+                <cite class="testimonial-card__name">Edgar López</cite>
+                <p class="testimonial-card__meta">Reseña en Google</p>
               </div>
             </div>
           </article>
@@ -614,12 +637,12 @@
               <span class="testimonial-card__star">★</span>
               <span class="testimonial-card__star">★</span>
             </div>
-            <blockquote class="testimonial-card__quote">Muy profesionales. Me explicaron el problema de la nevera y la dejaron como nueva. Garantía por escrito.</blockquote>
+            <blockquote class="testimonial-card__quote">La responsabilidad y la eficacia son de resaltar en el servicio que recibí. Sin lugar a dudas los recomiendo por su excelencia.</blockquote>
             <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">MG</span>
+              <span class="testimonial-card__avatar" aria-hidden="true">CV</span>
               <div>
-                <cite class="testimonial-card__name">María González</cite>
-                <p class="testimonial-card__service">Reparación Nevera</p>
+                <cite class="testimonial-card__name">Carmen Vázquez</cite>
+                <p class="testimonial-card__meta">Reseña en Google</p>
               </div>
             </div>
           </article>
@@ -631,15 +654,20 @@
               <span class="testimonial-card__star">★</span>
               <span class="testimonial-card__star">★</span>
             </div>
-            <blockquote class="testimonial-card__quote">Instalaron el aire acondicionado en mi negocio sin problemas. Precio justo y respuesta rápida.</blockquote>
+            <blockquote class="testimonial-card__quote">Super capacitados, profesionales sobre todo responsables; tienen personal competente y comprometido con su labor. Los recomiendo sin ninguna duda.</blockquote>
             <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">JL</span>
+              <span class="testimonial-card__avatar" aria-hidden="true">JD</span>
               <div>
-                <cite class="testimonial-card__name">Jorge López</cite>
-                <p class="testimonial-card__service">Instalación Aire</p>
+                <cite class="testimonial-card__name">Jhoan Diaz</cite>
+                <p class="testimonial-card__meta">Reseña en Google</p>
               </div>
             </div>
           </article>
+        </div>
+
+        <p class="testimonials__source">Reseñas de Google</p>
+        <div class="testimonials__google-wrap">
+          <a href="https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.524251,-76.2934326,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1!16s%2Fg%2F11xmfc1ss8?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" class="testimonials__google-link btn btn--ghost" target="_blank" rel="noopener noreferrer">Ver más reseñas en Google</a>
         </div>
 
         <div class="testimonials__stats" role="list">
@@ -726,9 +754,9 @@
 
     <section id="faq" class="section faq" aria-labelledby="faq-title">
       <div class="container faq__container">
-        <span class="faq__tag" aria-hidden="true">SOPORTE RÁPIDO</span>
-        <h2 id="faq-title" class="faq__title">Preguntas Frecuentes</h2>
-        <p class="faq__subtitle">Resolvemos tus dudas sobre nuestro servicio técnico en Palmira.</p>
+        <span class="faq__tag" aria-hidden="true">ANTES DE AGENDAR</span>
+        <h2 id="faq-title" class="faq__title">Resolvemos tus dudas antes de agendar</h2>
+        <p class="faq__subtitle">Estas son las preguntas más comunes. Si tu caso es diferente, escríbenos y te orientamos.</p>
 
         <div class="faq__list" role="list">
           <details class="faq-item" role="listitem">
@@ -738,7 +766,7 @@
               <span class="faq-item__icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-item__content">
-              <p>Sí. Atendemos a domicilio en Palmira y alrededores. Puedes agendar por WhatsApp o llamada; si aplica, coordinamos la visita para diagnóstico o reparación en tu casa.</p>
+              <p>Sí. Atendemos a domicilio en Palmira y alrededores, y también en nuestro local.</p>
             </div>
           </details>
           <details class="faq-item" role="listitem">
@@ -748,7 +776,7 @@
               <span class="faq-item__icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-item__content">
-              <p>Te damos la información al cotizar. El diagnóstico y la visita se explican antes de ir; si decides reparar con nosotros, aplicamos garantía por el trabajo realizado.</p>
+              <p>Depende de la zona y el tipo de equipo. Te confirmamos el valor por WhatsApp antes de ir.</p>
             </div>
           </details>
           <details class="faq-item" role="listitem">
@@ -758,7 +786,7 @@
               <span class="faq-item__icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-item__content">
-              <p>Sí. Todas las reparaciones llevan garantía por escrito. Usamos repuestos de calidad y hacemos pruebas antes de entregar el equipo.</p>
+              <p>Sí. Entregamos garantía por escrito según el tipo de reparación y repuesto instalado.</p>
             </div>
           </details>
           <details class="faq-item" role="listitem">
@@ -768,7 +796,17 @@
               <span class="faq-item__icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-item__content">
-              <p>Damos prioridad a quienes agendan, pero intentamos atender urgencias cuando hay disponibilidad. Escríbenos por WhatsApp o llama para ver opciones el mismo día.</p>
+              <p>Atendemos el mismo día según disponibilidad. Si es urgente, escríbenos y priorizamos tu caso.</p>
+            </div>
+          </details>
+          <details class="faq-item" role="listitem">
+            <summary class="faq-item__summary">
+              <span class="faq-item__num">05</span>
+              <span class="faq-item__question">¿Qué marcas reparan?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-item__content">
+              <p>Reparamos la mayoría de marcas del mercado. Escríbenos la marca y el modelo y te confirmamos.</p>
             </div>
           </details>
         </div>
@@ -778,7 +816,7 @@
             <strong class="faq__cta-title">¿Tienes más dudas?</strong>
             <p class="faq__cta-desc">Estamos disponibles para orientarte.</p>
           </div>
-          <a class="faq__cta-btn btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20tengo%20dudas%20sobre%20el%20servicio%20técnico%20en%20Palmira" target="_blank" rel="noopener">Hablar con un técnico</a>
+          <a class="faq__cta-btn btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -796,7 +834,7 @@
             </li>
             <li class="location__item">
               <svg class="location__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+573183180948">318 318 0948</a>
+              <a href="tel:+573183180948">Llamar ahora</a>
             </li>
             <li class="location__item">
               <svg class="location__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -817,6 +855,15 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+
+        <div class="location__closure">
+          <h3 class="location__closure-title">¿Listo para agendar?</h3>
+          <p class="location__closure-desc">Te respondemos rápido por WhatsApp.</p>
+          <div class="location__closure-cta">
+            <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+            <a class="btn btn--ghost" href="tel:+573183180948">Llamar ahora</a>
+          </div>
         </div>
       </div>
     </section>
@@ -856,7 +903,7 @@
           </li>
           <li>
             <svg class="footer__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+573183180948">318 318 0948</a>
+            <a href="tel:+573183180948">Llamar ahora</a>
           </li>
           <li>
             <svg class="footer__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -877,9 +924,11 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573183180948?text=Hola,%20quiero%20información%20sobre%20el%20servicio%20técnico%20en%20Palmira" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.865 9.865 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+  <!-- Barra sticky inferior solo móvil: Agendar (WhatsApp) + Llamar -->
+  <div class="sticky-cta">
+    <a class="sticky-cta__btn sticky-cta__btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">Agendar</a>
+    <a class="sticky-cta__btn sticky-cta__btn--secondary" href="tel:+573183180948" aria-label="Llamar ahora">Llamar</a>
+  </div>
 
   <script src="js/main.js" type="module" defer></script>
 

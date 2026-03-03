@@ -174,28 +174,6 @@ main {
   background: var(--surface);
 }
 
-/* Drawer Header */
-.drawer__header {
-  padding: 24px 20px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.drawer__title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0 0 4px;
-  line-height: 1.2;
-}
-
-.drawer__subtitle {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.4;
-}
-
 /* Drawer CTA */
 .drawer__cta {
   padding: 20px;
@@ -264,6 +242,10 @@ main {
   gap: 10px;
   flex-wrap: wrap;
   padding-top: 6px;
+}
+
+.nav__actions .btn {
+  white-space: nowrap;
 }
 
 /* Ocultar nav__actions dentro del drawer en mobile */
@@ -344,7 +326,6 @@ main {
     transform: none;
   }
 
-  .drawer__header,
   .drawer__cta,
   .drawer__badges {
     display: none;
