@@ -10,37 +10,36 @@
 
   <meta name="description" content="Reparación de neveras y lavadoras en Palmira a domicilio. Diagnóstico por WhatsApp, repuestos de calidad y garantía por escrito. Agenda ahora en Línea Blanca." />
 
-  <link rel="canonical" href="https://edgarlopez95.github.io/linea-blanca/" />
+  <link rel="canonical" href="https://www.lineablancapalmira.com/" />
 
   <meta name="robots" content="index,follow" />
 
   <meta name="theme-color" content="#0B2D5C" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://edgarlopez95.github.io/linea-blanca/" />
+  <meta property="og:url" content="https://www.lineablancapalmira.com/" />
   <meta property="og:title" content="Reparación de Neveras y Lavadoras en Palmira | Línea Blanca" />
   <meta property="og:description" content="Atención rápida a domicilio. Diagnóstico por WhatsApp, repuestos de calidad y garantía por escrito en Palmira y alrededores." />
-  <meta property="og:image" content="https://edgarlopez95.github.io/linea-blanca/assets/og-image.jpg" />
+  <meta property="og:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
   <meta property="og:locale" content="es_CO" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Reparación de Neveras y Lavadoras en Palmira | Línea Blanca" />
   <meta name="twitter:description" content="Atención rápida a domicilio. Diagnóstico por WhatsApp, repuestos de calidad y garantía por escrito en Palmira y alrededores." />
-  <meta name="twitter:image" content="https://edgarlopez95.github.io/linea-blanca/assets/og-image.jpg" />
+  <meta name="twitter:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
 
   <title>Reparación de Neveras y Lavadoras en Palmira | Línea Blanca (A Domicilio)</title>
 
-
-
+  <!-- Fuentes: preconnect; CSS de fuentes cargado async (preload → stylesheet) para no bloquear render -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
-
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" /></noscript>
 
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preload" as="image" href="assets/img/gallery/hero-bg.webp" fetchpriority="high" />
 
   <link rel="stylesheet" href="css/main.css" />
 
@@ -97,6 +96,7 @@
         alt="Línea Blanca - Servicio técnico en Palmira"
         width="160"
         height="54"
+        decoding="async"
       />
     </a>
 
@@ -116,6 +116,8 @@
               alt="Línea Blanca - Servicio técnico en Palmira"
               width="140"
               height="47"
+              loading="lazy"
+              decoding="async"
             />
           </a>
           <button class="nav__close" type="button" aria-label="Cerrar menú">
@@ -162,11 +164,11 @@
 
 
   <main id="main">
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__overlay"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <h1 class="hero__title">Reparación experta de línea blanca en Palmira</h1>
+          <h1 id="hero-title" class="hero__title">Reparación experta de línea blanca en Palmira</h1>
           
           <p class="hero__subtitle">Reparamos neveras, lavadoras y aires. Atención rápida en Palmira y alrededores, con garantía.</p>
 
@@ -218,7 +220,7 @@
           <div class="brands__logos" role="list">
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/abba.png"
+                src="assets/img/logos/abba.webp"
                 alt="Servicio técnico Abba en Palmira"
                 width="120"
                 height="44"
@@ -228,7 +230,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/centrales.png"
+                src="assets/img/logos/centrales.webp"
                 alt="Servicio técnico Centrales en Palmira"
                 width="120"
                 height="44"
@@ -238,7 +240,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/challenger.png"
+                src="assets/img/logos/challenger.webp"
                 alt="Servicio técnico Challenger en Palmira"
                 width="120"
                 height="44"
@@ -248,7 +250,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/daewoo.png"
+                src="assets/img/logos/daewoo.webp"
                 alt="Servicio técnico Daewoo en Palmira"
                 width="120"
                 height="44"
@@ -258,7 +260,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/electrolux.png"
+                src="assets/img/logos/electrolux.webp"
                 alt="Servicio técnico Electrolux en Palmira"
                 width="120"
                 height="44"
@@ -268,7 +270,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/haceb.png"
+                src="assets/img/logos/haceb.webp"
                 alt="Servicio técnico Haceb en Palmira"
                 width="120"
                 height="44"
@@ -278,7 +280,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/lg.png"
+                src="assets/img/logos/lg.webp"
                 alt="Servicio técnico LG en Palmira"
                 width="120"
                 height="44"
@@ -288,7 +290,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/mabe.png"
+                src="assets/img/logos/mabe.webp"
                 alt="Servicio técnico Mabe en Palmira"
                 width="120"
                 height="44"
@@ -298,7 +300,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/olimpo.png"
+                src="assets/img/logos/olimpo.webp"
                 alt="Servicio técnico Olimpo en Palmira"
                 width="120"
                 height="44"
@@ -308,7 +310,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/panasonic.png"
+                src="assets/img/logos/panasonic.webp"
                 alt="Servicio técnico Panasonic en Palmira"
                 width="120"
                 height="44"
@@ -318,7 +320,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/samsung.png"
+                src="assets/img/logos/samsung.webp"
                 alt="Servicio técnico Samsung en Palmira"
                 width="120"
                 height="44"
@@ -328,7 +330,7 @@
             </div>
             <div class="brands__logo" role="listitem">
               <img
-                src="assets/img/logos/whirlpool.png"
+                src="assets/img/logos/whirlpool.webp"
                 alt="Servicio técnico Whirlpool en Palmira"
                 width="120"
                 height="44"
@@ -339,40 +341,40 @@
           </div>
           <div class="brands__logos" role="list" aria-hidden="true">
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/abba.png" alt="Servicio técnico Abba en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/abba.webp" alt="Servicio técnico Abba en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/centrales.png" alt="Servicio técnico Centrales en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/centrales.webp" alt="Servicio técnico Centrales en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/challenger.png" alt="Servicio técnico Challenger en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/challenger.webp" alt="Servicio técnico Challenger en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/daewoo.png" alt="Servicio técnico Daewoo en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/daewoo.webp" alt="Servicio técnico Daewoo en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/electrolux.png" alt="Servicio técnico Electrolux en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/electrolux.webp" alt="Servicio técnico Electrolux en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/haceb.png" alt="Servicio técnico Haceb en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/haceb.webp" alt="Servicio técnico Haceb en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/lg.png" alt="Servicio técnico LG en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/lg.webp" alt="Servicio técnico LG en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/mabe.png" alt="Servicio técnico Mabe en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/mabe.webp" alt="Servicio técnico Mabe en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/olimpo.png" alt="Servicio técnico Olimpo en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/olimpo.webp" alt="Servicio técnico Olimpo en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/panasonic.png" alt="Servicio técnico Panasonic en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/panasonic.webp" alt="Servicio técnico Panasonic en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/samsung.png" alt="Servicio técnico Samsung en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/samsung.webp" alt="Servicio técnico Samsung en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
             <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/whirlpool.png" alt="Servicio técnico Whirlpool en Palmira" width="120" height="44" loading="lazy" decoding="async" />
+              <img src="assets/img/logos/whirlpool.webp" alt="Servicio técnico Whirlpool en Palmira" width="120" height="44" loading="lazy" decoding="async" />
             </div>
           </div>
           </div>
@@ -536,7 +538,7 @@
         <div class="services__grid">
           <article class="services__card services__card--fridge">
             <div class="services__media">
-              <img src="assets/img/gallery/neveras.webp" alt="Neveras y refrigeración, servicio técnico en Palmira" loading="lazy" />
+              <img src="assets/img/gallery/neveras.webp" alt="Neveras y refrigeración, servicio técnico en Palmira" width="400" height="250" loading="lazy" decoding="async" />
             </div>
             <div class="services__body">
               <h3 class="services__name">Neveras y Refrigeración</h3>
@@ -547,7 +549,7 @@
 
           <article class="services__card services__card--wash">
             <div class="services__media">
-              <img src="assets/img/gallery/lavadora.webp" alt="Reparación de lavadoras en Palmira" loading="lazy" />
+              <img src="assets/img/gallery/lavadora.webp" alt="Reparación de lavadoras en Palmira" width="400" height="250" loading="lazy" decoding="async" />
             </div>
             <div class="services__body">
               <h3 class="services__name">Lavadoras</h3>
@@ -558,7 +560,7 @@
 
           <article class="services__card services__card--air">
             <div class="services__media">
-              <img src="assets/img/gallery/aires.webp" alt="Mantenimiento y reparación de aires acondicionados en Palmira" loading="lazy" />
+              <img src="assets/img/gallery/aires.webp" alt="Mantenimiento y reparación de aires acondicionados en Palmira" width="400" height="250" loading="lazy" decoding="async" />
             </div>
             <div class="services__body">
               <h3 class="services__name">Aires Acondicionados</h3>
@@ -569,7 +571,7 @@
 
           <article class="services__card services__card--maint">
             <div class="services__media">
-              <img src="assets/img/gallery/mantenimiento.webp" alt="Mantenimiento preventivo de línea blanca en Palmira" loading="lazy" />
+              <img src="assets/img/gallery/mantenimiento.webp" alt="Mantenimiento preventivo de línea blanca en Palmira" width="400" height="250" loading="lazy" decoding="async" />
             </div>
             <div class="services__body">
               <h3 class="services__name">Mantenimiento Preventivo</h3>
@@ -580,7 +582,7 @@
 
           <article class="services__card services__card--parts services__card--wide">
             <div class="services__media">
-              <img src="assets/img/gallery/repuestos.webp" alt="Repuestos para lavadoras y neveras en Palmira" loading="lazy" />
+              <img src="assets/img/gallery/repuestos.webp" alt="Repuestos para lavadoras y neveras en Palmira" width="400" height="250" loading="lazy" decoding="async" />
             </div>
             <div class="services__body">
               <h3 class="services__name">Venta de Repuestos Originales</h3>
@@ -743,14 +745,14 @@
         <div class="slider-container" data-coverflow>
           <button type="button" id="prevBtn" class="slider-nav-btn prev" aria-label="Anterior">&#10094;</button>
           <button type="button" id="nextBtn" class="slider-nav-btn next" aria-label="Siguiente">&#10095;</button>
-          <img class="slide" src="assets/img/gallery/1.png" alt="Técnico reparando nevera en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/2.png" alt="Técnico revisando lavadora en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/3.png" alt="Técnico en banco técnico en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/4.png" alt="Fachada del negocio en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/5.png" alt="Técnico mostrando repuesto en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/6.png" alt="Servicio técnico a domicilio en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/7.png" alt="Instalación de aire acondicionado en Palmira" loading="lazy" data-slide />
-          <img class="slide" src="assets/img/gallery/8.png" alt="Servicio a domicilio en Palmira" loading="lazy" data-slide />
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/1.webp" /><img src="assets/img/gallery/1.png" alt="Técnico reparando nevera en Palmira" width="380" height="380" loading="eager" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/2.webp" /><img src="assets/img/gallery/2.png" alt="Técnico revisando lavadora en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/3.webp" /><img src="assets/img/gallery/3.png" alt="Técnico en banco técnico en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/4.webp" /><img src="assets/img/gallery/4.png" alt="Fachada del negocio en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/5.webp" /><img src="assets/img/gallery/5.png" alt="Técnico mostrando repuesto en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/6.webp" /><img src="assets/img/gallery/6.png" alt="Servicio técnico a domicilio en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/7.webp" /><img src="assets/img/gallery/7.png" alt="Instalación de aire acondicionado en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
+          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/8.webp" /><img src="assets/img/gallery/8.png" alt="Servicio a domicilio en Palmira" width="380" height="380" loading="lazy" decoding="async" /></picture>
 
           <div class="dots-wrapper" data-dots aria-label="Navegación por diapositivas">
             <span class="dot" data-index="0" aria-label="Imagen 1"></span>
@@ -765,7 +767,7 @@
         </div>
 
         <div class="gallery__cta">
-          <a href="https://www.instagram.com/reparacion_linea.blanca/" target="_blank" rel="noopener noreferrer" class="btn btn--instagram">
+          <a href="https://www.instagram.com/reparacion_linea.blanca/" target="_blank" rel="noopener noreferrer" class="btn btn--instagram" aria-label="Instagram Línea Blanca">
             <svg class="gallery__instagram-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
@@ -930,14 +932,14 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a class="footer__logo" href="#top" aria-label="Ir al inicio">
-          <img src="assets/img/logos/logo-original.svg" alt="Línea Blanca, servicio técnico en Palmira" width="160" height="54" class="footer__logo-img" />
+          <img src="assets/img/logos/logo-original.svg" alt="Línea Blanca, servicio técnico en Palmira" width="160" height="54" class="footer__logo-img" loading="lazy" decoding="async" />
         </a>
         <p class="footer__desc">Expertos en reparación de línea blanca en Palmira. Recuperamos la vida útil de tus electrodomésticos con garantía.</p>
         <div class="footer__social">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+          <a href="https://www.facebook.com/reparar.lineablanca" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook Línea Blanca">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+          <a href="https://www.instagram.com/reparacion_linea.blanca/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram Línea Blanca">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
         </div>
@@ -993,9 +995,9 @@
   "@graph": [
     {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://edgarlopez95.github.io/linea-blanca/#business",
+      "@id": "https://www.lineablancapalmira.com/#business",
       "name": "Línea Blanca, centro de servicios técnicos",
-      "url": "https://edgarlopez95.github.io/linea-blanca/",
+      "url": "https://www.lineablancapalmira.com/",
       "telephone": "+573183180948",
       "address": {
         "@type": "PostalAddress",
@@ -1013,10 +1015,10 @@
     },
     {
       "@type": "Service",
-      "@id": "https://edgarlopez95.github.io/linea-blanca/#service",
+      "@id": "https://www.lineablancapalmira.com/#service",
       "name": "Reparación de neveras y lavadoras en Palmira",
       "provider": {
-        "@id": "https://edgarlopez95.github.io/linea-blanca/#business"
+        "@id": "https://www.lineablancapalmira.com/#business"
       },
       "areaServed": {
         "@type": "City",
@@ -1032,7 +1034,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://edgarlopez95.github.io/linea-blanca/#faq",
+      "@id": "https://www.lineablancapalmira.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -1104,6 +1106,7 @@
 }
 </script>
 
+  <script src="js/analytics.js" defer></script>
   <script src="js/main.js" type="module" defer></script>
 
   </body>

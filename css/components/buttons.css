@@ -30,6 +30,14 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: var(--muted);
+  background: var(--surface);
+  border-color: var(--border);
+}
+
 /* Primario: WhatsApp / Agendar (mismo estilo que hero) */
 .btn--primary {
   background: var(--primary);
@@ -37,7 +45,14 @@
   border-color: var(--primary);
 }
 
-.btn--primary:hover {
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
+
+.btn--primary:active {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
   color: #fff;
@@ -50,9 +65,16 @@
   color: var(--text);
 }
 
-.btn--ghost:hover {
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
   border-color: var(--border-hover);
   background: var(--surface);
+  color: var(--text);
+}
+
+.btn--ghost:active {
+  background: var(--border);
+  border-color: var(--border-hover);
   color: var(--text);
 }
 
@@ -63,9 +85,16 @@
   color: var(--text);
 }
 
-.btn--secondary:hover {
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
   border-color: var(--border-hover);
   background: var(--surface);
+  color: var(--text);
+}
+
+.btn--secondary:active {
+  background: var(--border);
+  border-color: var(--border-hover);
   color: var(--text);
 }
 
@@ -97,9 +126,16 @@
   padding: 14px 22px;
 }
 
-.btn--instagram:hover {
+.btn--instagram:hover,
+.btn--instagram:focus-visible {
   background: var(--brand-dark-hover);
   border-color: var(--brand-dark-hover);
   box-shadow: 0 6px 18px rgba(5, 36, 86, 0.3);
+  color: #fff;
+}
+
+.btn--instagram:active {
+  background: var(--brand-dark-hover);
+  border-color: var(--brand-dark-hover);
   color: #fff;
 }

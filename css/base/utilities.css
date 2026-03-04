@@ -43,4 +43,5 @@
   outline: var(--focus-ring);
   outline-offset: var(--focus-ring-offset);
   border-radius: 2px;
+  color: var(--brand-dark);
 }

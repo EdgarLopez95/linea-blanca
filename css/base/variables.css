@@ -20,7 +20,8 @@
   --section-padding-y: 64px;
   --section-padding-y-tablet: 48px;
   --section-padding-y-mobile: 32px;
-  --focus-ring: 3px solid rgba(59, 171, 250, 0.5);
+  --brand-blue: #052456;
+  --focus-ring: 3px solid var(--brand-blue);
   --focus-ring-offset: 3px;
 
   --container: 1120px;

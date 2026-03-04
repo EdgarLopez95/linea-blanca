@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edgarlopez95.github.io/linea-blanca/sitemap.xml
+Sitemap: https://www.lineablancapalmira.com/sitemap.xml
