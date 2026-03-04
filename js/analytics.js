@@ -21,21 +21,18 @@
     } else {
       window.dataLayer.push(payload);
     }
-    if (typeof console !== 'undefined' && console.log) {
-      console.log('[Analytics]', name, payload);
-    }
+    // Descomentar para validar eventos en consola:
+    // if (typeof console !== 'undefined' && console.log) { console.log('[Analytics]', name, payload); }
   }
 
   function getPlacement(el) {
     if (!el || !el.closest) return 'unknown';
+    if (el.closest('#inicio') || el.closest('.hero')) return 'hero';
     if (el.closest('.sticky-cta')) return 'sticky';
-    if (el.closest('.nav')) return 'header';
-    if (el.closest('.hero')) return 'hero';
-    if (el.closest('.video-reel')) return 'video_reel';
-    if (el.closest('#services')) return 'services_card';
+    if (el.closest('#services')) return 'services';
+    if (el.closest('#problems')) return 'problems';
     if (el.closest('#faq')) return 'faq';
     if (el.closest('#location')) return 'location';
-    if (el.closest('footer')) return 'footer';
     return 'unknown';
   }
 
