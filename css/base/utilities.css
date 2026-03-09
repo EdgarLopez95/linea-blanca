@@ -23,7 +23,11 @@
   border-radius: 10px;
   z-index: 9999;
 }
-.skip-link:focus { left: 12px; }
+.skip-link:focus-visible { left: 12px; }
+
+@supports not (selector(:focus-visible)) {
+  .skip-link:focus { left: 12px; }
+}
 
 /* Enlaces internos contextuales (estilo link, no botón) */
 .link-internal {

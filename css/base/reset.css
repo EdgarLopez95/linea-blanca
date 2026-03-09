@@ -22,6 +22,7 @@ button { font: inherit; }
 /* Focus visible (teclado): todos los interactivos, sin outline:none */
 a:focus-visible,
 button:focus-visible,
+summary:focus-visible,
 [role="button"]:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
@@ -34,6 +35,7 @@ select:focus-visible {
 @supports not (selector(:focus-visible)) {
   a:focus,
   button:focus,
+  summary:focus,
   [role="button"]:focus,
   input:focus,
   textarea:focus,
