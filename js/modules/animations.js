@@ -217,10 +217,11 @@ export function initAnimations() {
     const playerWrap = videoReelSection.querySelector('.video-reel__player-wrap');
     const videoReelTitle = videoReelSection.querySelector('.video-reel__title');
     const videoReelCards = videoReelSection.querySelectorAll('.video-reel__card');
+    const videoReelCardsWrap = videoReelSection.querySelector('.video-reel__cards');
     const sectionLinkWrap = videoReelSection.querySelector('.video-reel__section-link');
     const videoReelCta = videoReelSection.querySelector('.video-reel__cta');
     const videoReelCtaBtn = videoReelSection.querySelector('.video-reel__cta-btn');
-    let videoReelAnimated = false;
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
     if (playerWrap) gsap.set(playerWrap, { opacity: 0, y: 16 });
     if (videoReelTitle) gsap.set(videoReelTitle, { opacity: 0, y: 12 });
@@ -228,21 +229,64 @@ export function initAnimations() {
     if (sectionLinkWrap) gsap.set(sectionLinkWrap, { opacity: 0, y: 10 });
     if (videoReelCta) gsap.set(videoReelCta, { opacity: 0, y: 12 });
 
-    const videoReelObserver = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting || videoReelAnimated) return;
-        videoReelAnimated = true;
-        const vTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-        if (playerWrap) vTl.to(playerWrap, { opacity: 1, y: 0, duration: 0.5 }, 0);
-        if (videoReelTitle) vTl.to(videoReelTitle, { opacity: 1, y: 0, duration: 0.4 }, 0.6);
-        if (videoReelCards.length) vTl.to(videoReelCards, { opacity: 1, y: 0, duration: 0.42, stagger: 0.12 }, 1.1);
-        if (sectionLinkWrap) vTl.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.35 }, 1.75);
-        if (videoReelCta) vTl.to(videoReelCta, { opacity: 1, y: 0, duration: 0.45 }, 2.25);
-      },
-      { rootMargin: '0px 0px 0px 0px', threshold: 0.18 }
-    );
-    videoReelObserver.observe(videoReelSection);
+    const observerOpts = { rootMargin: '0px 0px 0px 0px', threshold: 0.18 };
+
+    if (isDesktop) {
+      let videoReelAnimated = false;
+      const videoReelObserver = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry.isIntersecting || videoReelAnimated) return;
+          videoReelAnimated = true;
+          const vTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+          if (playerWrap) vTl.to(playerWrap, { opacity: 1, y: 0, duration: 0.5 }, 0);
+          if (videoReelTitle) vTl.to(videoReelTitle, { opacity: 1, y: 0, duration: 0.4 }, 0.6);
+          if (videoReelCards.length) vTl.to(videoReelCards, { opacity: 1, y: 0, duration: 0.42, stagger: 0.12 }, 1.1);
+          if (sectionLinkWrap) vTl.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.35 }, 1.75);
+          if (videoReelCta) vTl.to(videoReelCta, { opacity: 1, y: 0, duration: 0.45 }, 2.25);
+        },
+        observerOpts
+      );
+      videoReelObserver.observe(videoReelSection);
+    } else {
+      let playerDone = false;
+      let titleDone = false;
+      let cardsDone = false;
+      let linkDone = false;
+      let ctaDone = false;
+      const runWhenVisible = (entry, key, fn) => {
+        if (!entry.isIntersecting) return;
+        if (key === 'player' && playerDone) return;
+        if (key === 'title' && titleDone) return;
+        if (key === 'cards' && cardsDone) return;
+        if (key === 'link' && linkDone) return;
+        if (key === 'cta' && ctaDone) return;
+        if (key === 'player') playerDone = true;
+        if (key === 'title') titleDone = true;
+        if (key === 'cards') cardsDone = true;
+        if (key === 'link') linkDone = true;
+        if (key === 'cta') ctaDone = true;
+        fn();
+      };
+      const mobileObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const el = entry.target;
+            if (el === playerWrap) runWhenVisible(entry, 'player', () => gsap.to(playerWrap, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }));
+            else if (el === videoReelTitle) runWhenVisible(entry, 'title', () => gsap.to(videoReelTitle, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }));
+            else if (el === videoReelCardsWrap) runWhenVisible(entry, 'cards', () => gsap.to(videoReelCards, { opacity: 1, y: 0, duration: 0.42, stagger: 0.1, ease: 'power2.out' }));
+            else if (el === sectionLinkWrap) runWhenVisible(entry, 'link', () => gsap.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }));
+            else if (el === videoReelCta) runWhenVisible(entry, 'cta', () => gsap.to(videoReelCta, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }));
+          });
+        },
+        observerOpts
+      );
+      if (playerWrap) mobileObserver.observe(playerWrap);
+      if (videoReelTitle) mobileObserver.observe(videoReelTitle);
+      if (videoReelCardsWrap) mobileObserver.observe(videoReelCardsWrap);
+      if (sectionLinkWrap) mobileObserver.observe(sectionLinkWrap);
+      if (videoReelCta) mobileObserver.observe(videoReelCta);
+    }
 
     if (window.matchMedia('(hover: hover)').matches) {
       videoReelCards.forEach((card) => {
