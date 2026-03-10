@@ -240,7 +240,7 @@ export function initAnimations() {
         if (sectionLinkWrap) vTl.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.35 }, 1.75);
         if (videoReelCta) vTl.to(videoReelCta, { opacity: 1, y: 0, duration: 0.45 }, 2.25);
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.3 }
+      { rootMargin: '0px 0px 0px 0px', threshold: 0.18 }
     );
     videoReelObserver.observe(videoReelSection);
 
@@ -304,7 +304,7 @@ export function initAnimations() {
         });
         if (processCta) pTl.to(processCta, { opacity: 1, y: 0, duration: 0.45 }, 2.7);
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.3 }
+      { rootMargin: '0px 0px 0px 0px', threshold: 0.18 }
     );
     processObserver.observe(processSection);
 
@@ -357,7 +357,7 @@ export function initAnimations() {
           sTl.to(card, { opacity: 1, y: 0, duration: dur }, start);
         });
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.3 }
+      { rootMargin: '0px 0px 0px 0px', threshold: 0.18 }
     );
     servicesObserver.observe(servicesSection);
 
