@@ -272,11 +272,11 @@ export function initAnimations() {
         (entries) => {
           entries.forEach((entry) => {
             const el = entry.target;
-            if (el === playerWrap) runWhenVisible(entry, 'player', () => gsap.to(playerWrap, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }));
-            else if (el === videoReelTitle) runWhenVisible(entry, 'title', () => gsap.to(videoReelTitle, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }));
-            else if (el === videoReelCardsWrap) runWhenVisible(entry, 'cards', () => gsap.to(videoReelCards, { opacity: 1, y: 0, duration: 0.42, stagger: 0.1, ease: 'power2.out' }));
-            else if (el === sectionLinkWrap) runWhenVisible(entry, 'link', () => gsap.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }));
-            else if (el === videoReelCta) runWhenVisible(entry, 'cta', () => gsap.to(videoReelCta, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }));
+            if (el === playerWrap) runWhenVisible(entry, 'player', () => gsap.to(playerWrap, { opacity: 1, y: 0, duration: 0.72, ease: 'power2.out' }));
+            else if (el === videoReelTitle) runWhenVisible(entry, 'title', () => gsap.to(videoReelTitle, { opacity: 1, y: 0, duration: 0.58, ease: 'power2.out' }));
+            else if (el === videoReelCardsWrap) runWhenVisible(entry, 'cards', () => gsap.to(videoReelCards, { opacity: 1, y: 0, duration: 0.55, stagger: 0.14, ease: 'power2.out' }));
+            else if (el === sectionLinkWrap) runWhenVisible(entry, 'link', () => gsap.to(sectionLinkWrap, { opacity: 1, y: 0, duration: 0.48, ease: 'power2.out' }));
+            else if (el === videoReelCta) runWhenVisible(entry, 'cta', () => gsap.to(videoReelCta, { opacity: 1, y: 0, duration: 0.58, ease: 'power2.out' }));
           });
         },
         observerOpts
@@ -377,33 +377,78 @@ export function initAnimations() {
     const servicesTitle = servicesSection.querySelector('.services__title');
     const servicesSubtitle = servicesSection.querySelector('.services__subtitle');
     const servicesIntro = servicesSection.querySelector('.services__intro');
+    const servicesGrid = servicesSection.querySelector('.services__grid');
     const servicesCards = servicesSection.querySelectorAll('.services__card');
-    let servicesAnimated = false;
+    const isServicesDesktop = window.matchMedia('(min-width: 768px)').matches;
 
     if (servicesTitle) gsap.set(servicesTitle, { opacity: 0, y: 14 });
     if (servicesSubtitle) gsap.set(servicesSubtitle, { opacity: 0, y: 12 });
     if (servicesIntro) gsap.set(servicesIntro, { opacity: 0, y: 12 });
     servicesCards.forEach((card) => gsap.set(card, { opacity: 0, y: 14 }));
 
-    const servicesObserver = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting || servicesAnimated) return;
-        servicesAnimated = true;
-        const sTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-        if (servicesTitle) sTl.to(servicesTitle, { opacity: 1, y: 0, duration: 0.4 }, 0);
-        if (servicesSubtitle) sTl.to(servicesSubtitle, { opacity: 1, y: 0, duration: 0.35 }, 0.4);
-        if (servicesIntro) sTl.to(servicesIntro, { opacity: 1, y: 0, duration: 0.35 }, 0.8);
-        servicesCards.forEach((card, i) => {
-          const isFridge = card.classList.contains('services__card--fridge');
-          const start = isFridge ? 1.15 : 1.35 + (i - 1) * 0.08;
-          const dur = isFridge ? 0.5 : 0.4;
-          sTl.to(card, { opacity: 1, y: 0, duration: dur }, start);
-        });
-      },
-      { rootMargin: '0px 0px 0px 0px', threshold: 0.18 }
-    );
-    servicesObserver.observe(servicesSection);
+    const servicesObserverOpts = { rootMargin: '0px 0px 0px 0px', threshold: 0.18 };
+
+    if (isServicesDesktop) {
+      let servicesAnimated = false;
+      const servicesObserver = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry.isIntersecting || servicesAnimated) return;
+          servicesAnimated = true;
+          const sTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+          if (servicesTitle) sTl.to(servicesTitle, { opacity: 1, y: 0, duration: 0.4 }, 0);
+          if (servicesSubtitle) sTl.to(servicesSubtitle, { opacity: 1, y: 0, duration: 0.35 }, 0.4);
+          if (servicesIntro) sTl.to(servicesIntro, { opacity: 1, y: 0, duration: 0.35 }, 0.8);
+          servicesCards.forEach((card, i) => {
+            const isFridge = card.classList.contains('services__card--fridge');
+            const start = isFridge ? 1.15 : 1.35 + (i - 1) * 0.08;
+            const dur = isFridge ? 0.5 : 0.4;
+            sTl.to(card, { opacity: 1, y: 0, duration: dur }, start);
+          });
+        },
+        servicesObserverOpts
+      );
+      servicesObserver.observe(servicesSection);
+    } else {
+      let servicesTitleDone = false;
+      let servicesSubtitleDone = false;
+      let servicesIntroDone = false;
+      let servicesGridDone = false;
+      const runWhenVisible = (entry, key, fn) => {
+        if (!entry.isIntersecting) return;
+        if (key === 'title' && servicesTitleDone) return;
+        if (key === 'subtitle' && servicesSubtitleDone) return;
+        if (key === 'intro' && servicesIntroDone) return;
+        if (key === 'grid' && servicesGridDone) return;
+        if (key === 'title') servicesTitleDone = true;
+        if (key === 'subtitle') servicesSubtitleDone = true;
+        if (key === 'intro') servicesIntroDone = true;
+        if (key === 'grid') servicesGridDone = true;
+        fn();
+      };
+      const servicesMobileObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const el = entry.target;
+            if (el === servicesTitle) runWhenVisible(entry, 'title', () => gsap.to(servicesTitle, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }));
+            else if (el === servicesSubtitle) runWhenVisible(entry, 'subtitle', () => gsap.to(servicesSubtitle, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }));
+            else if (el === servicesIntro) runWhenVisible(entry, 'intro', () => gsap.to(servicesIntro, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }));
+            else if (el === servicesGrid) runWhenVisible(entry, 'grid', () => {
+              servicesCards.forEach((card, i) => {
+                const isFridge = card.classList.contains('services__card--fridge');
+                const dur = isFridge ? 0.5 : 0.42;
+                gsap.to(card, { opacity: 1, y: 0, duration: dur, delay: i * 0.08, ease: 'power2.out' });
+              });
+            });
+          });
+        },
+        servicesObserverOpts
+      );
+      if (servicesTitle) servicesMobileObserver.observe(servicesTitle);
+      if (servicesSubtitle) servicesMobileObserver.observe(servicesSubtitle);
+      if (servicesIntro) servicesMobileObserver.observe(servicesIntro);
+      if (servicesGrid) servicesMobileObserver.observe(servicesGrid);
+    }
 
     if (window.matchMedia('(hover: hover)').matches) {
       servicesCards.forEach((card) => {
