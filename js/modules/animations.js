@@ -3,6 +3,10 @@
  * initAnimations() must be called after DOM is ready.
  */
 export function initAnimations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
   if (typeof window.gsap === 'undefined') {
     console.error('GSAP is not loaded. Animations will not run.');
     return;

@@ -3,21 +3,21 @@
  * No depende del dominio; sin hardcodes a dominios antiguos.
  */
 (function () {
-  'use strict';
+  "use strict";
 
   window.dataLayer = window.dataLayer || [];
 
   function trackEvent(name, params) {
     var payload = { event: name };
-    if (params && typeof params === 'object') {
+    if (params && typeof params === "object") {
       for (var key in params) {
         if (Object.prototype.hasOwnProperty.call(params, key)) {
           payload[key] = params[key];
         }
       }
     }
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', name, params || {});
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, params || {});
     } else {
       window.dataLayer.push(payload);
     }
@@ -26,42 +26,47 @@
   }
 
   function getPlacement(el) {
-    if (!el || !el.closest) return 'unknown';
-    if (el.closest('#inicio') || el.closest('.hero')) return 'hero';
-    if (el.closest('.sticky-cta')) return 'sticky';
-    if (el.closest('#services')) return 'services';
-    if (el.closest('#problems')) return 'problems';
-    if (el.closest('#faq')) return 'faq';
-    if (el.closest('#location')) return 'location';
-    return 'unknown';
+    if (!el || !el.closest) return "unknown";
+    if (el.closest("#inicio") || el.closest(".hero")) return "hero";
+    if (el.closest(".sticky-cta")) return "sticky";
+    if (el.closest("#brands")) return "brands";
+    if (el.closest("#video")) return "video";
+    if (el.closest("#como-trabajamos")) return "process";
+    if (el.closest("#services")) return "services";
+    if (el.closest("#costos")) return "costos";
+    if (el.closest("#testimonials")) return "testimonials";
+    if (el.closest("#galeria")) return "gallery";
+    if (el.closest("#faq")) return "faq";
+    if (el.closest("#location")) return "location";
+    return "unknown";
   }
 
   function getLinkText(el) {
-    if (!el) return '';
-    var text = (el.textContent || '').trim();
+    if (!el) return "";
+    var text = (el.textContent || "").trim();
     return text.slice(0, 200);
   }
 
   function initCtaTracking() {
     document.addEventListener(
-      'click',
+      "click",
       function (e) {
-        var target = e.target && e.target.closest ? e.target.closest('a') : null;
+        var target = e.target && e.target.closest ? e.target.closest("a") : null;
         if (!target || !target.href) return;
 
-        var href = target.getAttribute('href') || target.href || '';
+        var href = target.getAttribute("href") || target.href || "";
 
-        if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
-          trackEvent('cta_whatsapp_click', {
+        if (href.indexOf("wa.me") !== -1 || href.indexOf("api.whatsapp.com") !== -1) {
+          trackEvent("cta_whatsapp_click", {
             placement: getPlacement(target),
             href: href,
-            text: getLinkText(target)
+            text: getLinkText(target),
           });
-        } else if (href.indexOf('tel:') === 0) {
-          trackEvent('cta_call_click', {
+        } else if (href.indexOf("tel:") === 0) {
+          trackEvent("cta_call_click", {
             placement: getPlacement(target),
             href: href,
-            text: getLinkText(target)
+            text: getLinkText(target),
           });
         }
       },
@@ -84,11 +89,11 @@
 
       if (!scroll50Done && pct >= 0.5) {
         scroll50Done = true;
-        trackEvent('scroll_50', { depth: 50 });
+        trackEvent("scroll_50", { depth: 50 });
       }
       if (!scroll90Done && pct >= 0.9) {
         scroll90Done = true;
-        trackEvent('scroll_90', { depth: 90 });
+        trackEvent("scroll_90", { depth: 90 });
       }
       ticking = false;
     }
@@ -99,21 +104,21 @@
       requestAnimationFrame(checkScroll);
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     checkScroll();
   }
 
   function initFaqTracking() {
-    var faqList = document.querySelector('#faq .faq__list');
+    var faqList = document.querySelector("#faq .faq__list");
     if (!faqList) return;
 
-    faqList.addEventListener('toggle', function (e) {
+    faqList.addEventListener("toggle", function (e) {
       var details = e.target;
-      if (!details.open || !details.classList.contains('faq-item')) return;
+      if (!details.open || !details.classList.contains("faq-item")) return;
 
-      var questionEl = details.querySelector('.faq-item__question');
-      var question = questionEl ? questionEl.textContent.trim() : '';
-      var items = faqList.querySelectorAll('.faq-item');
+      var questionEl = details.querySelector(".faq-item__question");
+      var question = questionEl ? questionEl.textContent.trim() : "";
+      var items = faqList.querySelectorAll(".faq-item");
       var index = 0;
       for (var i = 0; i < items.length; i++) {
         if (items[i] === details) {
@@ -121,7 +126,7 @@
           break;
         }
       }
-      trackEvent('faq_open', { question: question, index: index });
+      trackEvent("faq_open", { question: question, index: index });
     });
   }
 
@@ -134,8 +139,8 @@
     initFaqTracking();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
