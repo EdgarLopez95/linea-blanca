@@ -1,9 +1,43 @@
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 0.6rem;
   line-height: 1.15;
   color: var(--brand-dark);
 }
 
-p { margin: 0 0 1rem; color: var(--muted); }
-strong { color: var(--text); }
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
 
+strong {
+  color: var(--text);
+}
+
+/* Título bicromático: navy + sky (como redes / og:image) */
+.title-accent,
+.hero__title-accent {
+  color: var(--brand-light);
+}
+
+.testimonials__title .title-accent,
+.faq__title .title-accent,
+.costos__title .title-accent,
+.video-reel__title .title-accent,
+.services__title .title-accent,
+.process__title .title-accent,
+.gallery__title .title-accent,
+.location__title .title-accent {
+  color: var(--brand-light);
+}
+
+.why-block__title .title-accent {
+  color: var(--brand-light);
+}
+
+/* Anclas: el header fijo no tapa el título al navegar */
+.hero,
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}

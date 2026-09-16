@@ -24,8 +24,8 @@ main {
 
 .topbar__inner {
   display: grid;
-  gap: 6px;
-  padding: 10px var(--px);
+  gap: 4px;
+  padding: 6px var(--px);
 }
 
 .topbar__item {
@@ -50,7 +50,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px var(--px);
+  padding: 6px var(--px);
   gap: 12px;
   flex-wrap: nowrap;
 }
@@ -67,7 +67,7 @@ main {
 }
 
 .brand img {
-  height: 56px;
+  height: 48px;
   width: auto;
 }
 
@@ -275,7 +275,7 @@ main {
   }
 
   .brand img {
-    height: 64px;
+    height: 52px;
   }
 
   .nav {
@@ -369,15 +369,15 @@ main {
   }
 
   .topbar__inner {
-    padding: 8px var(--px);
+    padding: 5px var(--px);
   }
 
   .header__inner {
-    padding: 6px var(--px);
+    padding: 5px var(--px);
   }
 
   .brand img {
-    height: 52px;
+    height: 46px;
   }
 
   .drawer__links {

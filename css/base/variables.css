@@ -1,10 +1,11 @@
 :root {
   /* Colors */
   --bg: #ffffff;
+  --section-alt: #edf0f5;
   --text: #052456;
   --muted: #5b6473;
-  --primary: #3babfa;
-  --primary-hover: #2a9ae8;
+  --primary: #39a9ed;
+  --primary-hover: #2b97d9;
   --primary-700: #052456;
   --border: #e6eaf0;
   --border-hover: #cfd6e2;
@@ -12,7 +13,7 @@
 
   --brand-dark: #052456;
   --brand-dark-hover: #041a38;
-  --brand-light: #3babfa;
+  --brand-light: #39a9ed;
 
   /* Spacing / layout */
   --radius: 14px;
@@ -27,35 +28,38 @@
   --container: 1120px;
   --px: 16px;
 
-  --fs-1: clamp(1.6rem, 2.5vw, 2.2rem);
-  --fs-2: 1.25rem;
-  --fs-3: 1.05rem;
-  --fs-4: 0.95rem;
+  /* Escala tipográfica ratio ~1.25 */
+  --fs-display: clamp(2rem, 4.8vw, 3rem);
+  --fs-1: clamp(1.75rem, 3vw, 2.35rem);
+  --fs-2: 1.4rem;
+  --fs-3: 1.125rem;
+  --fs-4: 0.9rem;
 
   --lh: 1.5;
+  --measure: 68ch;
 
   --font: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  /* Altura del header para compensar cuando está fixed (desktop por defecto) */
-  --header-height: 120px;
+  /* Header fijo: topbar + barra principal (desktop) */
+  --header-height: 90px;
 }
 
 @media (min-width: 768px) {
-  :root { --px: 20px; }
+  :root {
+    --px: 20px;
+  }
 }
 
 @media (max-width: 1200px) and (min-width: 768px) {
   :root {
     --px: 16px;
-    --header-height: 120px;
+    --header-height: 86px;
   }
 }
 
 @media (max-width: 767px) {
   :root {
     --header-height: 73px;
-    /* Títulos principales (h2) de sección en móvil – más grandes */
     --section-title-mobile: 1.75rem;
   }
 }
-
