@@ -23,7 +23,11 @@ strong {
 
 .testimonials__title .title-accent,
 .faq__title .title-accent,
-.costos__title .title-accent,
+.costos__title .title-accent {
+  /* Secciones dark: sky pierde contraste → blanco */
+  color: #ffffff;
+}
+
 .video-reel__title .title-accent,
 .services__title .title-accent,
 .process__title .title-accent,
