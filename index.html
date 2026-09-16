@@ -1,1207 +1,2403 @@
 <!doctype html>
+<!--
+  ═══ GOOGLE BUSINESS PROFILE — actualizar cuando cambien las reseñas ═══
+  Fuente: Perfil de Negocio → Leer opiniones (no inventar cifras).
+
+  GOOGLE_RATING:        5.0
+  GOOGLE_REVIEW_COUNT:  6
+  GOOGLE_MAPS_URL:      https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.524251,-76.2934326,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1!16s%2Fg%2F11xmfc1ss8?entry=ttu
+
+  Dónde editar (buscar 5.0, 6 opiniones o reviewCount):
+  1. #testimonials — badge: aria-label, .testimonials__rating-score, .testimonials__rating-count, href
+  2. #testimonials — botón "Ver reseñas y calificación en Google" (mismo href)
+  3. JSON-LD — aggregateRating.ratingValue y aggregateRating.reviewCount
+  4. JSON-LD — sameAs (entrada de Google Maps)
+
+  Tarjetas visibles (3 de N): si rotas citas, actualiza también JSON-LD → review[]
+  (author, reviewBody) para que coincida con lo que se muestra en pantalla.
+-->
 
 <html lang="es">
-
   <head>
+    <meta charset="UTF-8" />
 
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp."
+    />
 
-  <meta name="description" content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp." />
+    <link rel="canonical" href="https://www.lineablancapalmira.com/" />
 
-  <link rel="canonical" href="https://www.lineablancapalmira.com/" />
+    <meta name="robots" content="index,follow" />
 
-  <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0B2D5C" />
 
-  <meta name="theme-color" content="#0B2D5C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lineablancapalmira.com/" />
+    <meta
+      property="og:title"
+      content="Reparación de Neveras y Lavadoras en Palmira | Con Domicilio"
+    />
+    <meta
+      property="og:description"
+      content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp."
+    />
+    <meta property="og:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
+    <meta property="og:locale" content="es_CO" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.lineablancapalmira.com/" />
-  <meta property="og:title" content="Reparación de Neveras y Lavadoras en Palmira | Con Domicilio" />
-  <meta property="og:description" content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp." />
-  <meta property="og:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
-  <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Reparación de Neveras y Lavadoras en Palmira | con Domicilio"
+    />
+    <meta
+      name="twitter:description"
+      content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp."
+    />
+    <meta name="twitter:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reparación de Neveras y Lavadoras en Palmira | con Domicilio" />
-  <meta name="twitter:description" content="Reparación de neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito. Atención rápida por WhatsApp." />
-  <meta name="twitter:image" content="https://www.lineablancapalmira.com/assets/og-image.jpg" />
+    <title>Reparación de Neveras y Lavadoras en Palmira</title>
 
-  <title>Reparación de Neveras y Lavadoras en Palmira | Servicio Técnico a Domicilio</title>
+    <!-- Fuentes: preconnect; CSS de fuentes cargado async (preload → stylesheet) para no bloquear render -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    /></noscript>
 
-  <!-- Fuentes: preconnect; CSS de fuentes cargado async (preload → stylesheet) para no bloquear render -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" /></noscript>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/gallery/hero-bg.webp"
+      fetchpriority="high"
+      media="(min-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/gallery/hero-bg-mobile.webp"
+      fetchpriority="high"
+      media="(max-width: 767px)"
+    />
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/main.css?v=2.4" />
 
-  <link rel="preload" as="image" href="assets/img/gallery/hero-bg.webp" fetchpriority="high" media="(min-width: 768px)" />
-  <link rel="preload" as="image" href="assets/img/gallery/hero-bg-mobile.webp" fetchpriority="high" media="(max-width: 767px)" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4WR19ZF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-0G4WR19ZF2");
+    </script>
 
-  <link rel="stylesheet" href="css/main.css" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4WR19ZF2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0G4WR19ZF2');
-  </script>
-
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1934827810569549');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1934827810569549&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1934827810569549");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1934827810569549&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
 
-
   <body>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1934827810569549&amp;ev=PageView&amp;noscript=1"
+        alt=""
+    /></noscript>
 
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1934827810569549&amp;ev=PageView&amp;noscript=1" alt="" /></noscript>
+    <header class="site-header" id="top">
+      <div class="topbar" data-nosnippet>
+        <div class="container topbar__inner">
+          <p class="topbar__item">
+            <svg
+              class="icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="topbar__text">Servicio técnico en Palmira y alrededores</span>
+          </p>
 
-  <header class="site-header" id="top">
+          <p class="topbar__item">
+            <svg
+              class="icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span class="topbar__text">Lun–Vie 8–12 / 2–5 · Sáb 8–12</span>
+          </p>
 
-  <div class="topbar" data-nosnippet>
+          <p class="topbar__item topbar__tel">
+            <svg
+              class="icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+            <span class="topbar__text">318 318 0948</span>
+          </p>
+        </div>
+      </div>
 
-    <div class="container topbar__inner">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Ir al inicio">
+          <img
+            src="assets/img/logos/logo-original.svg"
+            alt="Línea Blanca"
+            width="160"
+            height="54"
+            decoding="async"
+          />
+        </a>
 
-      <p class="topbar__item">
-        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <span class="topbar__text">Servicio técnico en Palmira y alrededores</span>
-      </p>
+        <nav class="nav" aria-label="Navegación principal" data-nosnippet>
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            aria-label="Abrir menú"
+          >
+            <span aria-hidden="true">☰</span>
+          </button>
 
-      <p class="topbar__item">
-        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        <span class="topbar__text">Lun–Vie 8–12 / 2–5 · Sáb 8–12</span>
-      </p>
+          <div class="nav__overlay"></div>
 
-      <p class="topbar__item topbar__tel">
-        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <span class="topbar__text">318 318 0948</span>
-      </p>
+          <div class="nav__menu" id="navMenu">
+            <div class="drawer__top">
+              <a class="drawer__brand" href="#top" aria-label="Ir al inicio">
+                <img
+                  src="assets/img/logos/logo-original.svg"
+                  alt="Línea Blanca"
+                  width="140"
+                  height="47"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <button class="nav__close" type="button" aria-label="Cerrar menú">
+                <span aria-hidden="true">✕</span>
+              </button>
+            </div>
 
-    </div>
+            <div class="drawer__cta">
+              <a
+                class="btn btn--primary btn--full"
+                href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+              >
+                Agendar por WhatsApp
+              </a>
+            </div>
 
-  </div>
+            <div class="drawer__badges">
+              <span class="badge">Garantía</span>
+              <span class="badge">Atención a domicilio</span>
+              <span class="badge">Técnicos certificados</span>
+            </div>
 
+            <div class="drawer__links">
+              <a href="#services">Servicios</a>
+              <a href="#costos">Costos</a>
+              <a href="#testimonials">Reseñas</a>
+              <a href="#faq">Preguntas</a>
+              <a href="#location">Ubicación</a>
+            </div>
 
+            <div class="nav__actions">
+              <a
+                class="btn btn--primary"
+                href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+              >
+                Agendar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  <div class="container header__inner">
+    <main id="main">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__overlay"></div>
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 id="hero-title" class="hero__title">
+              Reparación de <span class="hero__title-accent">Neveras y Lavadoras</span> en
+              <span class="hero__title-accent">Palmira</span>
+            </h1>
 
-    <a class="brand" href="#top" aria-label="Ir al inicio">
-      <img
-        src="assets/img/logos/logo-original.svg"
-        alt="Línea Blanca"
-        width="160"
-        height="54"
-        decoding="async"
-      />
-    </a>
+            <p class="hero__subtitle">
+              Reparamos neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico
+              claro y garantía por escrito.
+            </p>
 
-    <nav class="nav" aria-label="Navegación principal" data-nosnippet>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
-        <span aria-hidden="true">☰</span>
-      </button>
+            <ul class="hero__badges">
+              <li>
+                <svg
+                  class="hero__badge-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Atención rápida
+              </li>
+              <li>
+                <svg
+                  class="hero__badge-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Garantía por escrito
+              </li>
+            </ul>
 
-      <div class="nav__overlay"></div>
+            <div class="hero__cta">
+              <a
+                class="btn btn--primary btn--large"
+                href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+              >
+                Agendar por WhatsApp
+              </a>
+              <a class="btn btn--ghost btn--large" href="tel:+573183180948">Llamar ahora</a>
+            </div>
 
-      <div class="nav__menu" id="navMenu">
-        <div class="drawer__top">
-          <a class="drawer__brand" href="#top" aria-label="Ir al inicio">
+            <div class="hero__answer" id="hero-answer" data-expanded="false">
+              <p class="hero__answer-text" id="hero-answer-text">
+                <span class="hero__answer-more"
+                  >Te ayudamos hoy mismo en Palmira y alrededores.
+                </span>
+                <span class="hero__answer-short"
+                  >Diagnóstico rápido por WhatsApp, repuestos de calidad y garantía en Palmira y
+                  alrededores.</span
+                >
+                <span class="hero__answer-more"
+                  >Reparamos neveras, lavadoras, enfriadores y aires acondicionados a domicilio o en
+                  nuestro local. Escríbenos y te orientamos con el costo estimado antes de
+                  agendar.</span
+                >
+              </p>
+              <button
+                type="button"
+                class="hero__answer-toggle"
+                aria-expanded="false"
+                aria-controls="hero-answer-text"
+                id="hero-answer-toggle"
+                aria-label="Ver más información sobre el servicio"
+              >
+                Ver más
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section brands"
+        id="brands"
+        aria-label="Marcas de electrodomésticos que reparamos"
+      >
+        <div class="container">
+          <div class="brands__track" aria-hidden="true">
+            <div class="brands__track-inner">
+              <div class="brands__logos" role="list">
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/abba.webp"
+                    alt="Logo Abba"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/centrales.webp"
+                    alt="Logo Centrales"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/challenger.webp"
+                    alt="Logo Challenger"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/daewoo.webp"
+                    alt="Logo Daewoo"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/electrolux.webp"
+                    alt="Logo Electrolux"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/haceb.webp"
+                    alt="Logo Haceb"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/lg.webp"
+                    alt="Logo LG"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/mabe.webp"
+                    alt="Logo Mabe"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/olimpo.webp"
+                    alt="Logo Olimpo"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/panasonic.webp"
+                    alt="Logo Panasonic"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/samsung.webp"
+                    alt="Logo Samsung"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/whirlpool.webp"
+                    alt="Logo Whirlpool"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div class="brands__logos" role="list" aria-hidden="true">
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/abba.webp"
+                    alt="Logo Abba"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/centrales.webp"
+                    alt="Logo Centrales"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/challenger.webp"
+                    alt="Logo Challenger"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/daewoo.webp"
+                    alt="Logo Daewoo"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/electrolux.webp"
+                    alt="Logo Electrolux"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/haceb.webp"
+                    alt="Logo Haceb"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/lg.webp"
+                    alt="Logo LG"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/mabe.webp"
+                    alt="Logo Mabe"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/olimpo.webp"
+                    alt="Logo Olimpo"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/panasonic.webp"
+                    alt="Logo Panasonic"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/samsung.webp"
+                    alt="Logo Samsung"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="brands__logo" role="listitem">
+                  <img
+                    src="assets/img/logos/whirlpool.webp"
+                    alt="Logo Whirlpool"
+                    width="120"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <p class="brands__microcopy">
+            ¿No ves tu marca aquí? Escríbenos: también atendemos muchas más.
+          </p> -->
+        </div>
+      </section>
+
+      <section id="video" class="section video-reel" aria-labelledby="video-title">
+        <div class="container video-reel__inner">
+          <div class="video-reel__player-wrap">
+            <div class="video-reel__player">
+              <video
+                class="video-reel__video"
+                src="assets/video/reel.mp4"
+                muted
+                playsinline
+                preload="none"
+                loop
+              ></video>
+              <button
+                class="video-reel__mute"
+                type="button"
+                aria-label="Activar sonido"
+                aria-pressed="false"
+              >
+                <svg
+                  class="video-reel__mute-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+                <svg
+                  class="video-reel__mute-icon video-reel__mute-icon--hidden"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="video-reel__content">
+            <h2 id="video-title" class="video-reel__title">
+              ¿Tu electrodoméstico está <span class="title-accent">fallando</span>?
+            </h2>
+
+            <div class="video-reel__cards">
+              <a
+                class="video-reel__card"
+                href="https://wa.me/573183180948?text=Hola%2C%20mi%20nevera%20no%20enfr%C3%ADa%20y%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+                aria-label="Agendar revisión por WhatsApp: nevera no enfría"
+              >
+                <div class="video-reel__card-icon video-reel__card-icon--cold" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                    />
+                    <circle cx="12" cy="12" r="4" />
+                  </svg>
+                </div>
+                <h3 class="video-reel__card-title">No enfría</h3>
+                <p class="video-reel__card-text">Posible falla en gas, compresor o termostato.</p>
+                <p class="video-reel__card-note">
+                  Si lo dejas así, puede aumentar el consumo y empeorar la falla.
+                </p>
+                <span class="video-reel__card-hint">Agendar por WhatsApp</span>
+              </a>
+              <a
+                class="video-reel__card"
+                href="https://wa.me/573183180948?text=Hola%2C%20mi%20lavadora%20no%20centrifuga%20y%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+                aria-label="Agendar revisión por WhatsApp: lavadora no centrifuga"
+              >
+                <div class="video-reel__card-icon video-reel__card-icon--spin" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 8v8M8 12h8" />
+                  </svg>
+                </div>
+                <h3 class="video-reel__card-title">No centrifuga</h3>
+                <p class="video-reel__card-text">Problemas en motor, bomba o tarjeta lógica.</p>
+                <p class="video-reel__card-note">
+                  Si sigues usándola así, puede afectar el motor y otros componentes.
+                </p>
+                <span class="video-reel__card-hint">Agendar por WhatsApp</span>
+              </a>
+              <a
+                class="video-reel__card"
+                href="https://wa.me/573183180948?text=Hola%2C%20mi%20equipo%20hace%20mucho%20ruido%20y%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+                aria-label="Agendar revisión por WhatsApp: equipo hace mucho ruido"
+              >
+                <div class="video-reel__card-icon video-reel__card-icon--noise" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
+                  </svg>
+                </div>
+                <h3 class="video-reel__card-title">Hace mucho ruido</h3>
+                <p class="video-reel__card-text">Desgaste en rodamientos o soportes sueltos.</p>
+                <p class="video-reel__card-note">
+                  Atenderlo a tiempo evita daños mayores y reparaciones más costosas.
+                </p>
+                <span class="video-reel__card-hint">Agendar por WhatsApp</span>
+              </a>
+              <a
+                class="video-reel__card"
+                href="https://wa.me/573183180948?text=Hola%2C%20mi%20equipo%20tiene%20fugas%20y%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+                aria-label="Agendar revisión por WhatsApp: equipo tiene fugas"
+              >
+                <div class="video-reel__card-icon video-reel__card-icon--leak" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z" />
+                  </svg>
+                </div>
+                <h3 class="video-reel__card-title">Tiene fugas</h3>
+                <p class="video-reel__card-text">Mangueras rotas, sellos vencidos o filtros.</p>
+                <p class="video-reel__card-note">
+                  Una fuga puede causar daños y empeorar si no se revisa a tiempo.
+                </p>
+                <span class="video-reel__card-hint">Agendar por WhatsApp</span>
+              </a>
+            </div>
+            <p class="video-reel__section-link">
+              <a href="#services" class="link-internal">Ver todos los servicios</a>
+            </p>
+            <div class="video-reel__cta">
+              <div class="video-reel__cta-text">
+                <strong>¿Otro problema?</strong>
+                <span>Cuéntanos qué le pasa a tu equipo y te orientamos.</span>
+              </div>
+              <a
+                class="video-reel__cta-btn btn btn--primary"
+                href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                target="_blank"
+                rel="noopener"
+                >Agendar por WhatsApp</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-title">
+        <div class="container testimonials__container">
+          <h2 id="testimonials-title" class="testimonials__title">
+            Clientes que ya confiaron en <span class="title-accent">nosotros</span>
+          </h2>
+          <p class="testimonials__subtitle">
+            Opiniones reales de quienes ya utilizaron nuestro servicio técnico en Palmira.
+          </p>
+
+          <a
+            class="testimonials__rating-badge"
+            href="https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.524251,-76.2934326,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1!16s%2Fg%2F11xmfc1ss8?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Calificación 5.0 de 5 en Google, basada en 6 opiniones. Ver en Google Maps"
+          >
+            <svg
+              class="testimonials__google-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
+              />
+              <path
+                fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              />
+              <path
+                fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              />
+              <path
+                fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              />
+            </svg>
+            <span class="testimonials__rating-score">5.0</span>
+            <span class="testimonials__rating-stars" aria-hidden="true">★★★★★</span>
+            <span class="testimonials__rating-count">6 opiniones en Google</span>
+          </a>
+
+          <div class="testimonials__grid" role="list">
+            <article class="testimonial-card" role="listitem">
+              <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                Muy buen servicio. Atienden muy rápido y manejan buenos precios. Recomendado.
+              </blockquote>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__avatar" aria-hidden="true">EL</span>
+                <div>
+                  <cite class="testimonial-card__name">Edgar López</cite>
+                  <p class="testimonial-card__meta">Reseña en Google</p>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" role="listitem">
+              <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                La responsabilidad y la eficacia son de resaltar en el servicio que recibí. Sin
+                lugar a dudas los recomiendo por su excelencia.
+              </blockquote>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__avatar" aria-hidden="true">CV</span>
+                <div>
+                  <cite class="testimonial-card__name">Carmen Vázquez</cite>
+                  <p class="testimonial-card__meta">Reseña en Google</p>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" role="listitem">
+              <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+                <span class="testimonial-card__star">★</span>
+              </div>
+              <blockquote class="testimonial-card__quote">
+                Super capacitados, profesionales sobre todo responsables; tienen personal competente
+                y comprometido con su labor. Los recomiendo sin ninguna duda.
+              </blockquote>
+              <div class="testimonial-card__author">
+                <span class="testimonial-card__avatar" aria-hidden="true">JD</span>
+                <div>
+                  <cite class="testimonial-card__name">Jhoan Diaz</cite>
+                  <p class="testimonial-card__meta">Reseña en Google</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="testimonials__source">
+            Reseñas verificables en Google. Consulta la calificación y opiniones actualizadas en
+            Google Maps.
+          </p>
+          <div class="testimonials__google-wrap">
+            <a
+              href="https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.524251,-76.2934326,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1!16s%2Fg%2F11xmfc1ss8?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
+              class="testimonials__google-link btn btn--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver reseñas y calificación en Google Maps de Línea Blanca"
+              >Ver reseñas y calificación en Google</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services" aria-labelledby="services-title">
+        <div class="container services__container">
+          <h2 id="services-title" class="services__title">
+            Servicio técnico <span class="title-accent">en Palmira</span>
+          </h2>
+          <p class="services__subtitle">
+            Reparación y mantenimiento a domicilio. Selecciona el servicio que necesitas.
+          </p>
+          <p class="services__intro">Atendemos hogares, negocios y otros equipos de apoyo.</p>
+
+          <div class="services__grid">
+            <article class="services__card services__card--fridge">
+              <div class="services__media">
+                <img
+                  src="assets/img/gallery/neveras.webp"
+                  alt="Nevera y refrigeración"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="services__body">
+                <h3 class="services__name">Neveras y Refrigeración</h3>
+                <p class="services__desc">
+                  Restaura el frío y conserva tus alimentos con servicio rápido y garantizado el
+                  mismo día.
+                </p>
+                <details class="services__details">
+                  <summary
+                    class="services__details-summary"
+                    aria-label="Ver detalles de Neveras y refrigeración"
+                  >
+                    Ver detalles
+                  </summary>
+                  <p class="services__micro">
+                    Reparación de neveras en Palmira a domicilio para equipos que no enfrían, no
+                    congelan o presentan fallas frecuentes.
+                  </p>
+                </details>
+                <a
+                  class="btn btn--primary btn--small"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar por WhatsApp"
+                  >WhatsApp</a
+                >
+              </div>
+            </article>
+
+            <article class="services__card services__card--wash">
+              <div class="services__media">
+                <img
+                  src="assets/img/gallery/lavadora.webp"
+                  alt="Lavadora en reparación"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="services__body">
+                <h3 class="services__name">Lavadoras</h3>
+                <p class="services__desc">
+                  Deja tu ropa impecable de nuevo. Reparación experta y solución a problemas de
+                  centrifugado.
+                </p>
+                <details class="services__details">
+                  <summary class="services__details-summary" aria-label="Ver detalles de Lavadoras">
+                    Ver detalles
+                  </summary>
+                  <p class="services__micro">
+                    Reparación de lavadoras en Palmira para equipos que no centrifugan, no desaguan
+                    o presentan ruidos extraños.
+                  </p>
+                </details>
+                <a
+                  class="btn btn--primary btn--small"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar por WhatsApp"
+                  >WhatsApp</a
+                >
+              </div>
+            </article>
+
+            <article class="services__card services__card--air">
+              <div class="services__media">
+                <img
+                  src="assets/img/gallery/aires.webp"
+                  alt="Aire acondicionado, mantenimiento y reparación"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="services__body">
+                <h3 class="services__name">Aires Acondicionados</h3>
+                <p class="services__desc">
+                  Disfruta del clima ideal en tu hogar con nuestro mantenimiento y reparación
+                  profunda.
+                </p>
+                <details class="services__details">
+                  <summary
+                    class="services__details-summary"
+                    aria-label="Ver detalles de Aires acondicionados"
+                  >
+                    Ver detalles
+                  </summary>
+                  <p class="services__micro">
+                    Mantenimiento e instalación de aire acondicionado con revisión, limpieza y
+                    atención confiable en Palmira.
+                  </p>
+                </details>
+                <a
+                  class="btn btn--primary btn--small"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar por WhatsApp"
+                  >WhatsApp</a
+                >
+              </div>
+            </article>
+
+            <article class="services__card services__card--maint">
+              <div class="services__media">
+                <img
+                  src="assets/img/gallery/mantenimiento.webp"
+                  alt="Mantenimiento preventivo de electrodomésticos"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="services__body">
+                <h3 class="services__name">Mantenimiento Preventivo</h3>
+                <p class="services__desc">
+                  Alarga la vida útil de tus equipos y evita fallas costosas con revisiones
+                  periódicas.
+                </p>
+                <details class="services__details">
+                  <summary
+                    class="services__details-summary"
+                    aria-label="Ver detalles de Mantenimiento preventivo"
+                  >
+                    Ver detalles
+                  </summary>
+                  <p class="services__micro">
+                    Revisiones periódicas en Palmira para neveras, lavadoras y aires para evitar
+                    fallas costosas.
+                  </p>
+                </details>
+                <a
+                  class="btn btn--primary btn--small"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar por WhatsApp"
+                  >WhatsApp</a
+                >
+              </div>
+            </article>
+
+            <article class="services__card services__card--parts services__card--wide">
+              <div class="services__media">
+                <img
+                  src="assets/img/gallery/repuestos.webp"
+                  alt="Repuestos de línea blanca"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="services__body">
+                <h3 class="services__name">Venta de Repuestos Originales</h3>
+                <p class="services__desc">
+                  Encuentra piezas genuinas para tus electrodomésticos. Ideal si eres técnico o
+                  quieres repararlo tú mismo.
+                </p>
+                <details class="services__details">
+                  <summary
+                    class="services__details-summary"
+                    aria-label="Ver detalles de Venta de repuestos"
+                  >
+                    Ver detalles
+                  </summary>
+                  <p class="services__micro">
+                    Venta de repuestos para equipos de línea blanca, ideal para técnicos o clientes
+                    que necesitan una pieza específica.
+                  </p>
+                </details>
+                <a
+                  class="btn btn--primary btn--small"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar por WhatsApp"
+                  >WhatsApp</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="costos" class="section costos" aria-labelledby="costos-title">
+        <div class="container costos__container">
+          <div class="costos__content">
+            <h2 id="costos-title" class="costos__title">
+              ¿Cuánto cuesta <span class="title-accent">reparar</span>?
+            </h2>
+            <p class="costos__text">
+              Te damos un estimado claro antes de reparar. El valor depende del equipo, la falla y
+              si necesita repuesto; te lo explicamos antes de cualquier trabajo.
+            </p>
+            <div class="costos__cta">
+              <a
+                class="btn btn--primary"
+                href="https://wa.me/573183180948?text=Hola,%20quiero%20pedir%20un%20estimado%20para%20mi%20equipo"
+                target="_blank"
+                rel="noopener"
+              >
+                Pedir estimado por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="como-trabajamos" class="section process" aria-labelledby="process-title">
+        <div class="container">
+          <h2 id="process-title" class="process__title">
+            Así <span class="title-accent">trabajamos</span>
+          </h2>
+          <p class="process__subtitle">
+            Un proceso simple para que tu equipo vuelva a funcionar rápido y con garantía.
+          </p>
+
+          <ol class="process__timeline" role="list">
+            <li class="process__item">
+              <div class="process__node">1</div>
+              <div class="process__content">
+                <div class="process-card__icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </div>
+                <h3 class="process-card__title">Diagnóstico</h3>
+                <p class="process-card__text">
+                  Nos cuentas la falla por WhatsApp o llamada. Si aplica, agendamos visita a
+                  domicilio o revisamos en taller para identificar la causa real.
+                </p>
+                <p class="process-card__note">
+                  Puedes enviar foto o video del problema para agilizar.
+                </p>
+              </div>
+            </li>
+
+            <li class="process__item">
+              <div class="process__node">2</div>
+              <div class="process__content">
+                <div class="process-card__icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 2v6h6"></path>
+                    <path d="M16 13H8"></path>
+                    <path d="M16 17H8"></path>
+                    <path d="M10 9H8"></path>
+                  </svg>
+                </div>
+                <h3 class="process-card__title">Cotización transparente</h3>
+                <p class="process-card__text">
+                  Te damos una cotización clara antes de reparar. Te explicamos qué tiene, qué se
+                  cambia y cuánto cuesta.
+                </p>
+              </div>
+            </li>
+
+            <li class="process__item">
+              <div class="process__node">3</div>
+              <div class="process__content">
+                <div class="process-card__icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                    ></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <h3 class="process-card__title">Reparación y garantía</h3>
+                <p class="process-card__text">
+                  Realizamos la reparación con repuestos de calidad, hacemos pruebas de
+                  funcionamiento y entregamos garantía por el trabajo realizado.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="process__trust why-block">
+          <div class="container why-block__inner">
+            <div class="why-block__content">
+              <span class="why-block__eyebrow" aria-hidden="true">RESPALDO REAL</span>
+              <h2 id="why-title" class="why-block__title">
+                ¿Por qué confiar en <span class="title-accent">Línea Blanca</span>?
+              </h2>
+              <p class="why-block__desc">
+                Atendemos con claridad, servicio a domicilio y soporte confiable para que te sientas
+                tranquilo desde el primer contacto.
+              </p>
+              <p class="why-block__support">
+                Queremos que tengas una solución clara, rápida y con buena atención en Palmira.
+              </p>
+              <span class="why-block__badge" aria-hidden="true">
+                <svg
+                  class="why-block__badge-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+                Diagnóstico claro
+              </span>
+            </div>
+            <div class="why-block__grid" role="list">
+              <article class="why-block__card" role="listitem">
+                <span class="why-block__icon" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <path d="M9 22V12h6v10" />
+                    <path d="M8 6l4-2 4 2" />
+                  </svg>
+                </span>
+                <h3 class="why-block__card-title">Taller y domicilio</h3>
+                <p class="why-block__card-text">
+                  Contamos con taller físico y también atendemos a domicilio según el tipo de
+                  equipo.
+                </p>
+              </article>
+              <article class="why-block__card" role="listitem">
+                <span class="why-block__icon" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                    <path d="M9 15l2 2 4-4" />
+                  </svg>
+                </span>
+                <h3 class="why-block__card-title">Diagnóstico claro</h3>
+                <p class="why-block__card-text">
+                  Revisamos tu equipo y te orientamos de forma clara antes de realizar el servicio.
+                </p>
+              </article>
+              <article class="why-block__card" role="listitem">
+                <span class="why-block__icon" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </span>
+                <h3 class="why-block__card-title">Garantía real</h3>
+                <p class="why-block__card-text">
+                  Respaldamos el servicio realizado y te explicamos cómo aplica en cada caso.
+                </p>
+              </article>
+              <article class="why-block__card" role="listitem">
+                <span class="why-block__icon" aria-hidden="true">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <h3 class="why-block__card-title">Atención confiable</h3>
+                <p class="why-block__card-text">
+                  Brindamos atención cercana y responsable para clientes en Palmira y sectores
+                  cercanos.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estadísticas ocultas temporalmente hasta confirmación del cliente
+        <div class="container" style="margin-top: 48px">
+          <div class="testimonials__stats" role="list" style="margin-bottom: 48px">
+            <article class="stat-card" role="listitem">
+              <div class="stat-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="stat-card__icon"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 2v6h6" />
+                  <path d="M16 13H8" />
+                  <path d="M16 17H8" />
+                  <path d="M10 9H8" />
+                </svg>
+              </div>
+              <p class="stat-card__value">+10 Años</p>
+              <p class="stat-card__label">DE EXPERIENCIA REAL</p>
+              <span class="stat-card__badge stat-card__badge--green">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Líderes en el sector
+              </span>
+            </article>
+            <article class="stat-card" role="listitem">
+              <div class="stat-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="stat-card__icon"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              </div>
+              <p class="stat-card__value">+2500</p>
+              <p class="stat-card__label">EQUIPOS REPARADOS</p>
+              <span class="stat-card__badge">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+                Técnicos Certificados
+              </span>
+            </article>
+            <article class="stat-card" role="listitem">
+              <div class="stat-card__icon-wrap" aria-hidden="true">
+                <svg
+                  class="stat-card__icon"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <p class="stat-card__value">100%</p>
+              <p class="stat-card__label">GARANTÍA CERTIFICADA</p>
+              <span class="stat-card__badge">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Respaldo Total
+              </span>
+            </article>
+          </div>
+        </div>
+        -->
+      </section>
+
+      <section id="galeria" class="section gallery" aria-labelledby="gallery-title">
+        <div class="container gallery__container">
+          <h2 id="gallery-title" class="gallery__title">
+            <span class="gallery__title-short">Transparencia <span class="title-accent">Total</span></span
+            ><span class="gallery__title-full"
+              >Así trabajamos en <span class="title-accent">Palmira</span></span
+            >
+          </h2>
+          <p class="gallery__subtitle">
+            Equipo técnico real, taller propio y repuestos de calidad. Confía en expertos.
+          </p>
+
+          <div class="slider-container" data-coverflow>
+            <button type="button" id="prevBtn" class="slider-nav-btn prev" aria-label="Anterior">
+              &#10094;
+            </button>
+            <button type="button" id="nextBtn" class="slider-nav-btn next" aria-label="Siguiente">
+              &#10095;
+            </button>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/1.webp" />
+              <img
+                src="assets/img/gallery/1.png"
+                alt="Técnico reparando nevera"
+                width="380"
+                height="380"
+                loading="eager"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/2.webp" />
+              <img
+                src="assets/img/gallery/2.png"
+                alt="Técnico revisando lavadora"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/3.webp" />
+              <img
+                src="assets/img/gallery/3.png"
+                alt="Técnico en taller"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/4.webp" />
+              <img
+                src="assets/img/gallery/4.png"
+                alt="Fachada del local"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/5.webp" />
+              <img
+                src="assets/img/gallery/5.png"
+                alt="Técnico mostrando repuesto"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/6.webp" />
+              <img
+                src="assets/img/gallery/6.png"
+                alt="Servicio técnico a domicilio"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/7.webp" />
+              <img
+                src="assets/img/gallery/7.png"
+                alt="Instalación de aire acondicionado"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+            <picture class="slide" data-slide
+              ><source type="image/webp" srcset="assets/img/gallery/8.webp" />
+              <img
+                src="assets/img/gallery/8.png"
+                alt="Servicio a domicilio"
+                width="380"
+                height="380"
+                loading="lazy"
+                decoding="async"
+            /></picture>
+
+            <div class="dots-wrapper" data-dots aria-label="Navegación por diapositivas">
+              <span class="dot" data-index="0" aria-label="Imagen 1"></span>
+              <span class="dot" data-index="1" aria-label="Imagen 2"></span>
+              <span class="dot" data-index="2" aria-label="Imagen 3"></span>
+              <span class="dot" data-index="3" aria-label="Imagen 4"></span>
+              <span class="dot" data-index="4" aria-label="Imagen 5"></span>
+              <span class="dot" data-index="5" aria-label="Imagen 6"></span>
+              <span class="dot" data-index="6" aria-label="Imagen 7"></span>
+              <span class="dot" data-index="7" aria-label="Imagen 8"></span>
+            </div>
+          </div>
+
+          <div class="gallery__cta">
+            <a
+              href="https://www.instagram.com/reparacion_linea.blanca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--instagram"
+              aria-label="Instagram Línea Blanca"
+            >
+              <svg
+                class="gallery__instagram-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              Ver más trabajos en Instagram
+            </a>
+            <p class="gallery__cta-note">
+              <svg
+                class="gallery__check-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Actualizado semanalmente con nuevos proyectos en Palmira
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq" aria-labelledby="faq-title">
+        <div class="container faq__container">
+          <span class="faq__tag" aria-hidden="true">ANTES DE AGENDAR</span>
+          <h2 id="faq-title" class="faq__title">
+            Resolvemos tus dudas <span class="title-accent">antes de agendar</span>
+          </h2>
+          <p class="faq__subtitle">
+            Estas son las preguntas más comunes. Si tu caso es diferente, escríbenos y te
+            orientamos.
+          </p>
+
+          <div class="faq__list" role="list">
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">01</span>
+                <span class="faq-item__question">¿Atienden mi zona?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  Atendemos Palmira y alrededores. Escríbenos por WhatsApp y te confirmamos
+                  disponibilidad real según tu ubicación.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">02</span>
+                <span class="faq-item__question">¿Qué podría ser si mi nevera no enfría?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  Si la nevera prende pero no enfría, las causas más comunes suelen estar
+                  relacionadas con el sistema de enfriamiento, el termostato, el ventilador del
+                  evaporador o el compresor. También puede haber obstrucción en serpentines, pérdida
+                  de gas refrigerante, fallas en sensores o problemas en la tarjeta electrónica.
+                  Cuando el equipo sigue encendido pero no baja la temperatura, no conviene
+                  forzarlo al mínimo: eso aumenta el consumo eléctrico y puede empeorar el daño. En
+                  Palmira y alrededores te orientamos por WhatsApp con una foto o video del
+                  problema. Así podemos decirte si parece una revisión rápida a domicilio o si
+                  requiere una evaluación más completa en taller. Antes de cualquier reparación, te
+                  explicamos qué encontramos y te damos un estimado claro.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">03</span>
+                <span class="faq-item__question"
+                  >¿Qué podría ser si la ropa sale sucia de la lavadora?</span
+                >
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  Cuando la ropa sale sucia de la lavadora, el problema puede deberse a exceso de
+                  detergente, residuos acumulados, drenaje deficiente, suciedad interna del tambor o
+                  ciclos que ya no funcionan como deberían. A veces el filtro está obstruido, la
+                  bomba no desagua bien o hay desgaste en rodamientos, motor o tarjeta lógica. Si
+                  sigues usando el equipo así, la falla puede extenderse y volverse más costosa. En
+                  Palmira revisamos si se resuelve con mantenimiento, ajuste de ciclo o reparación de
+                  componentes. Escríbenos por WhatsApp, cuéntanos desde cuándo pasa, qué detergente
+                  usas y si el equipo desagua con normalidad. Con esa información te orientamos
+                  antes de agendar la visita.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">04</span>
+                <span class="faq-item__question"
+                  >¿Más o menos cuánto puede costar la reparación?</span
+                >
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  El costo depende de tres factores: el tipo de equipo, la falla detectada y si
+                  requiere repuesto original. Lo más honesto es darte un estimado inicial y
+                  confirmarlo después del diagnóstico físico en domicilio o en taller. Antes de
+                  reparar, te explicamos qué tiene el equipo, qué se cambiaría si aplica y cuánto
+                  costaría el trabajo. No publicamos precios fijos porque cada caso es distinto: una
+                  nevera que no enfría no es lo mismo que una lavadora con falla en motor. Si tienes
+                  dudas sobre el valor, escríbenos por WhatsApp con el modelo y el síntoma y te
+                  orientamos sin compromiso.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">05</span>
+                <span class="faq-item__question">¿Dan garantía en las reparaciones?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  Sí, damos garantía sobre el servicio realizado y los repuestos instalados. Te
+                  explicamos los términos específicos antes de realizar cualquier reparación.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary class="faq-item__summary">
+                <span class="faq-item__num">06</span>
+                <span class="faq-item__question">¿Qué marcas y equipos revisan?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__content">
+                <p>
+                  Trabajamos con neveras, lavadoras, aires acondicionados y enfriadores comerciales
+                  de marcas líderes como Haceb, LG, Samsung, Whirlpool, Mabe, Centrales, Challenger,
+                  Electrolux y más. Si tienes un equipo de otra marca, consúltanos.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq__cta">
+            <div class="faq__cta-text">
+              <strong class="faq__cta-title">¿Tienes más dudas?</strong>
+              <p class="faq__cta-desc">Estamos disponibles para orientarte.</p>
+            </div>
+            <a
+              class="faq__cta-btn btn btn--primary"
+              href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+              target="_blank"
+              rel="noopener"
+              >Agendar por WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="section location" aria-labelledby="location-title">
+        <div class="location__shell">
+          <div class="container location__container">
+            <div class="location__main">
+              <header class="location__header">
+                <span class="location__eyebrow" aria-hidden="true">UBICACIÓN Y COBERTURA</span>
+                <h2 id="location-title" class="location__title">
+                  Visítanos o <span class="title-accent">te visitamos</span>
+                </h2>
+                <p class="location__lead">
+                  Taller físico en Palmira y servicio técnico a domicilio en sectores cercanos.
+                </p>
+                <div class="location__chips" aria-label="Zonas de cobertura">
+                  <span class="location__chip location__chip--spot">Palmira</span>
+                  <span class="location__chip">Atención a domicilio</span>
+                  <span class="location__chip">Zonas cercanas</span>
+                </div>
+              </header>
+
+              <ul class="location__facts">
+                <li class="location__fact">
+                  <span class="location__fact-icon" aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <div class="location__fact-body">
+                    <span class="location__fact-label">Taller principal</span>
+                    <span class="location__fact-value">Cl. 28 #Cr18-27, Esquina Local 4, Palmira</span>
+                  </div>
+                </li>
+                <li class="location__fact">
+                  <span class="location__fact-icon" aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </span>
+                  <div class="location__fact-body">
+                    <span class="location__fact-label">Horarios</span>
+                    <span class="location__fact-value">Lun–Vie 8–12 / 2–5 · Sáb 8–12</span>
+                  </div>
+                </li>
+                <li class="location__fact">
+                  <span class="location__fact-icon" aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                      />
+                    </svg>
+                  </span>
+                  <div class="location__fact-body">
+                    <span class="location__fact-label">Servicio</span>
+                    <span class="location__fact-value">Taller y servicio técnico a domicilio</span>
+                  </div>
+                </li>
+              </ul>
+
+              <p class="location__maps-link">
+                <a
+                  class="link-internal"
+                  href="https://www.google.com/maps/dir//Cl.+28+%23Cr18-27,+Palmira,+Valle+del+Cauca/@4.6575715,-74.1122502,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!2m2!1d-76.2908577!2d3.5242456?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir ubicación de Línea Blanca en Google Maps"
+                  >Abrir en Google Maps</a
+                >
+              </p>
+            </div>
+
+            <div class="location__map-panel">
+              <div class="location__map-frame">
+                <iframe
+                  class="location__map"
+                  title="Ubicación Línea Blanca - Cl. 28 #Cr18-27, Esquina Local 4, Palmira"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1183.9366622458529!2d-76.29113861494592!3d3.524408227777914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a0596e03e0981%3A0xad48e80ced7be2c5!2sLinea%20Blanca%2C%20centro%20de%20servicios%20t%C3%A9cnicos!5e0!3m2!1ses!2sco!4v1764198876104!5m2!1ses!2sco"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="location__close" aria-labelledby="location-close-title">
+              <div class="location__close-text">
+                <h3 id="location-close-title" class="location__close-title">¿Listo para agendar?</h3>
+                <p class="location__close-desc">
+                  Te confirmamos cobertura en tu zona y te damos un estimado claro antes de reparar.
+                </p>
+              </div>
+              <div class="location__close-cta">
+                <a
+                  class="btn btn--primary location__close-btn"
+                  href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+                  target="_blank"
+                  rel="noopener"
+                  >Agendar por WhatsApp</a
+                >
+                <a class="btn btn--ghost location__close-btn--call" href="tel:+573183180948"
+                  >Llamar ahora</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a class="footer__logo" href="#top" aria-label="Ir al inicio">
             <img
               src="assets/img/logos/logo-original.svg"
               alt="Línea Blanca"
-              width="140"
-              height="47"
+              width="160"
+              height="54"
+              class="footer__logo-img"
               loading="lazy"
               decoding="async"
             />
           </a>
-          <button class="nav__close" type="button" aria-label="Cerrar menú">
-            <span aria-hidden="true">✕</span>
-          </button>
-        </div>
-
-        <div class="drawer__cta">
-          <a class="btn btn--primary btn--full"
-             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
-             target="_blank" rel="noopener">
-            Agendar por WhatsApp
-          </a>
-        </div>
-
-        <div class="drawer__badges">
-          <span class="badge">Garantía</span>
-          <span class="badge">Atención a domicilio</span>
-          <span class="badge">Técnicos certificados</span>
-        </div>
-
-        <div class="drawer__links">
-          <a href="#services">Servicios</a>
-          <a href="#testimonials">Reseñas</a>
-          <a href="#faq">Preguntas</a>
-          <a href="#location">Ubicación</a>
-        </div>
-
-        <div class="nav__actions">
-          <a class="btn btn--primary"
-             href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
-             target="_blank" rel="noopener">
-            Agendar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </nav>
-
-  </div>
-
-</header>
-
-
-
-  <main id="main">
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="hero__overlay"></div>
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <h1 id="hero-title" class="hero__title">Reparación de Neveras y Lavadoras en Palmira</h1>
-          
-          <p class="hero__subtitle">Reparamos neveras y lavadoras en Palmira con servicio técnico a domicilio, diagnóstico claro y garantía por escrito.</p>
-
-          <ul class="hero__badges">
-            <li>
-              <svg class="hero__badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
+          <p class="footer__desc">
+            Expertos en reparación de línea blanca en Palmira. Recuperamos la vida útil de tus
+            electrodomésticos con garantía.
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.facebook.com/reparar.lineablanca"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social-link"
+              aria-label="Facebook Línea Blanca"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
               </svg>
-              Atención rápida
+            </a>
+            <a
+              href="https://www.instagram.com/reparacion_linea.blanca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social-link"
+              aria-label="Instagram Línea Blanca"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__services">
+          <h2 class="footer__title">Nuestros Servicios</h2>
+          <ul class="footer__list" role="list">
+            <li><a href="#services">Lavadoras</a></li>
+            <li><a href="#services">Neveras</a></li>
+            <li><a href="#services">Aires Acondicionados</a></li>
+            <li><a href="#services">Venta de Repuestos</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h2 class="footer__title">Contáctanos</h2>
+          <ul class="footer__contact-list" role="list">
+            <li>
+              <svg
+                class="footer__contact-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Cl. 28 #Cr18-27, Esquina Local 4, Palmira</span>
             </li>
             <li>
-              <svg class="hero__badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              <svg
+                class="footer__contact-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
               </svg>
-              Garantía por escrito
+              <a href="tel:+573183180948">Llamar ahora</a>
+            </li>
+            <li>
+              <svg
+                class="footer__contact-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:contacto@lineablancapalmira.com">contacto@lineablancapalmira.com</a>
             </li>
           </ul>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--large"
-               href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
-               target="_blank" rel="noopener">
-              Agendar por WhatsApp
-            </a>
-            <a class="btn btn--ghost btn--large" href="tel:+573183180948">Llamar ahora</a>
-          </div>
-
-          <div class="hero__answer" id="hero-answer" data-expanded="false">
-            <p class="hero__answer-text" id="hero-answer-text">
-              <span class="hero__answer-more">Te ayudamos hoy mismo en Palmira y alrededores. </span>
-              <span class="hero__answer-short">Diagnóstico rápido por WhatsApp, repuestos de calidad y garantía en Palmira y alrededores.</span>
-              <span class="hero__answer-more">Reparamos neveras, lavadoras, enfriadores y aires acondicionados a domicilio o en nuestro local. Escríbenos y te orientamos con el costo estimado antes de agendar.</span>
-            </p>
-            <button type="button" class="hero__answer-toggle" aria-expanded="false" aria-controls="hero-answer-text" id="hero-answer-toggle" aria-label="Ver más información sobre el servicio">Ver más</button>
-          </div>
         </div>
       </div>
-    </section>
-
-    <section class="section brands" id="brands" aria-labelledby="brands-title">
-      <div class="container">
-        <h2 id="brands-title" class="brands__title">Somos expertos en las mejores marcas</h2>
-        <p class="brands__subtitle">Diagnóstico preciso y reparación segura, sin improvisar.</p>
-
-        <div class="brands__track" aria-hidden="true">
-          <div class="brands__track-inner">
-          <div class="brands__logos" role="list">
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/abba.webp"
-                alt="Logo Abba"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/centrales.webp"
-                alt="Logo Centrales"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/challenger.webp"
-                alt="Logo Challenger"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/daewoo.webp"
-                alt="Logo Daewoo"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/electrolux.webp"
-                alt="Logo Electrolux"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/haceb.webp"
-                alt="Logo Haceb"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/lg.webp"
-                alt="Logo LG"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/mabe.webp"
-                alt="Logo Mabe"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/olimpo.webp"
-                alt="Logo Olimpo"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/panasonic.webp"
-                alt="Logo Panasonic"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/samsung.webp"
-                alt="Logo Samsung"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img
-                src="assets/img/logos/whirlpool.webp"
-                alt="Logo Whirlpool"
-                width="120"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </div>
-          <div class="brands__logos" role="list" aria-hidden="true">
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/abba.webp" alt="Logo Abba" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/centrales.webp" alt="Logo Centrales" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/challenger.webp" alt="Logo Challenger" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/daewoo.webp" alt="Logo Daewoo" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/electrolux.webp" alt="Logo Electrolux" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/haceb.webp" alt="Logo Haceb" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/lg.webp" alt="Logo LG" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/mabe.webp" alt="Logo Mabe" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/olimpo.webp" alt="Logo Olimpo" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/panasonic.webp" alt="Logo Panasonic" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/samsung.webp" alt="Logo Samsung" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-            <div class="brands__logo" role="listitem">
-              <img src="assets/img/logos/whirlpool.webp" alt="Logo Whirlpool" width="120" height="44" loading="lazy" decoding="async" />
-            </div>
-          </div>
-          </div>
-        </div>
-
-        <p class="brands__microcopy">¿No ves tu marca aquí? Escríbenos: también atendemos muchas más.</p>
-      </div>
-    </section>
-
-    <section id="video" class="section video-reel" aria-labelledby="video-title">
-      <div class="container video-reel__inner">
-        <div class="video-reel__player-wrap">
-          <div class="video-reel__player">
-            <video
-              class="video-reel__video"
-              src="assets/video/reel.mp4"
-              muted
-              playsinline
-              preload="auto"
-              loop
-            ></video>
-            <button
-              class="video-reel__mute"
-              type="button"
-              aria-label="Activar sonido"
-              aria-pressed="false"
-            >
-              <svg class="video-reel__mute-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                <line x1="23" y1="9" x2="17" y2="15"></line>
-                <line x1="17" y1="9" x2="23" y2="15"></line>
-              </svg>
-              <svg class="video-reel__mute-icon video-reel__mute-icon--hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="video-reel__content">
-          <h2 id="video-title" class="video-reel__title">¿Tu electrodoméstico está fallando?</h2>
-          
-          <div class="video-reel__cards">
-            <article class="video-reel__card">
-              <div class="video-reel__card-icon video-reel__card-icon--cold" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
-              </div>
-              <h3 class="video-reel__card-title">No enfría</h3>
-              <p class="video-reel__card-text">Posible falla en gas, compresor o termostato.</p>
-              <p class="video-reel__card-note">Si lo dejas así, puede aumentar el consumo y empeorar la falla.</p>
-              <span class="video-reel__card-hint">Agendar</span>
-            </article>
-            <article class="video-reel__card">
-              <div class="video-reel__card-icon video-reel__card-icon--spin" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8M8 12h8"/></svg>
-              </div>
-              <h3 class="video-reel__card-title">No centrifuga</h3>
-              <p class="video-reel__card-text">Problemas en motor, bomba o tarjeta lógica.</p>
-              <p class="video-reel__card-note">Si sigues usándola así, puede afectar el motor y otros componentes.</p>
-              <span class="video-reel__card-hint">Agendar</span>
-            </article>
-            <article class="video-reel__card">
-              <div class="video-reel__card-icon video-reel__card-icon--noise" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-              </div>
-              <h3 class="video-reel__card-title">Hace mucho ruido</h3>
-              <p class="video-reel__card-text">Desgaste en rodamientos o soportes sueltos.</p>
-              <p class="video-reel__card-note">Atenderlo a tiempo evita daños mayores y reparaciones más costosas.</p>
-              <span class="video-reel__card-hint">Agendar</span>
-            </article>
-            <article class="video-reel__card">
-              <div class="video-reel__card-icon video-reel__card-icon--leak" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z"/></svg>
-              </div>
-              <h3 class="video-reel__card-title">Tiene fugas</h3>
-              <p class="video-reel__card-text">Mangueras rotas, sellos vencidos o filtros.</p>
-              <p class="video-reel__card-note">Una fuga puede causar daños y empeorar si no se revisa a tiempo.</p>
-              <span class="video-reel__card-hint">Agendar</span>
-            </article>
-          </div>
-          <p class="video-reel__section-link">
-            <a href="#services" class="link-internal">Ver todos los servicios</a>
+      <div class="footer__bottom">
+        <div class="container footer__bottom-inner">
+          <p class="footer__copy">
+            © <span id="current-year">2026</span> Línea Blanca. Todos los derechos reservados.
           </p>
-          <div class="video-reel__cta">
-            <div class="video-reel__cta-text">
-              <strong>¿Otro problema?</strong>
-              <span>Cuéntanos qué le pasa a tu equipo y te orientamos.</span>
-            </div>
-            <a class="video-reel__cta-btn btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <div class="footer__legal">
+            <a href="#modal-privacidad" class="legal-link">Política de Privacidad</a>
+            <span class="footer__sep">|</span>
+            <a href="#modal-terminos" class="legal-link">Términos y Condiciones</a>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section id="como-trabajamos" class="section process" aria-labelledby="process-title">
-      <div class="container">
-        <h2 id="process-title" class="process__title">Así trabajamos</h2>
-        <p class="process__subtitle">Un proceso simple para que tu equipo vuelva a funcionar rápido y con garantía.</p>
+    <!-- Barra sticky inferior solo móvil: Agendar (WhatsApp) + Llamar -->
+    <div class="sticky-cta" data-nosnippet>
+      <a
+        class="sticky-cta__btn btn btn--primary btn--small"
+        href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira"
+        target="_blank"
+        rel="noopener"
+        aria-label="Agendar por WhatsApp"
+        >WhatsApp</a
+      >
+      <a
+        class="sticky-cta__btn btn btn--ghost btn--small"
+        href="tel:+573183180948"
+        aria-label="Llamar ahora"
+        >Llamar ahora</a
+      >
+    </div>
 
-        <ol class="process__timeline" role="list">
-          <li class="process__item">
-            <div class="process__node">1</div>
-            <div class="process__content">
-              <div class="process-card__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.35-4.35"></path>
-                </svg>
-              </div>
-              <h3 class="process-card__title">Diagnóstico</h3>
-              <p class="process-card__text">Nos cuentas la falla por WhatsApp o llamada. Si aplica, agendamos visita a domicilio o revisamos en taller para identificar la causa real.</p>
-              <p class="process-card__note">Puedes enviar foto o video del problema para agilizar.</p>
-            </div>
-          </li>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://www.lineablancapalmira.com/#business",
+            "name": "Línea Blanca, centro de servicios técnicos",
+            "url": "https://www.lineablancapalmira.com/",
+            "telephone": "+573183180948",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Cl. 28 #Cr18-27, Esquina Local 4",
+              "addressLocality": "Palmira",
+              "addressRegion": "Valle del Cauca",
+              "addressCountry": "CO"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "3.52425",
+              "longitude": "-76.29086"
+            },
+            "priceRange": "$$",
+            "sameAs": [
+              "https://www.facebook.com/reparar.lineablanca",
+              "https://www.instagram.com/reparacion_linea.blanca/",
+              "https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.5242456,-76.2908577,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "6",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Edgar López" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Muy buen servicio. Atienden muy rápido y manejan buenos precios. Recomendado.",
+                "publisher": { "@type": "Organization", "name": "Google" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Carmen Vázquez" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "La responsabilidad y la eficacia son de resaltar en el servicio que recibí. Sin lugar a dudas los recomiendo por su excelencia.",
+                "publisher": { "@type": "Organization", "name": "Google" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Jhoan Diaz" },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Super capacitados, profesionales sobre todo responsables; tienen personal competente y comprometido con su labor. Los recomiendo sin ninguna duda.",
+                "publisher": { "@type": "Organization", "name": "Google" }
+              }
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "08:00",
+                "closes": "12:00"
+              }
+            ],
+            "image": "https://www.lineablancapalmira.com/assets/og-image.jpg",
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Palmira"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.lineablancapalmira.com/#service",
+            "name": "Servicio técnico de línea blanca en Palmira",
+            "provider": {
+              "@id": "https://www.lineablancapalmira.com/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Palmira"
+            },
+            "serviceType": [
+              "Neveras y refrigeración",
+              "Lavadoras",
+              "Aires acondicionados",
+              "Mantenimiento preventivo",
+              "Venta de repuestos originales"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.lineablancapalmira.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Atienden mi zona?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Atendemos Palmira y alrededores. Escríbenos por WhatsApp y te confirmamos disponibilidad real según tu ubicación."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué podría ser si mi nevera no enfría?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si la nevera prende pero no enfría, las causas más comunes suelen estar relacionadas con el sistema de enfriamiento, el termostato, el ventilador del evaporador o el compresor. También puede haber obstrucción en serpentines, pérdida de gas refrigerante, fallas en sensores o problemas en la tarjeta electrónica. Cuando el equipo sigue encendido pero no baja la temperatura, no conviene forzarlo al mínimo: eso aumenta el consumo eléctrico y puede empeorar el daño. En Palmira y alrededores te orientamos por WhatsApp con una foto o video del problema. Así podemos decirte si parece una revisión rápida a domicilio o si requiere una evaluación más completa en taller. Antes de cualquier reparación, te explicamos qué encontramos y te damos un estimado claro."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué podría ser si la ropa sale sucia de la lavadora?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cuando la ropa sale sucia de la lavadora, el problema puede deberse a exceso de detergente, residuos acumulados, drenaje deficiente, suciedad interna del tambor o ciclos que ya no funcionan como deberían. A veces el filtro está obstruido, la bomba no desagua bien o hay desgaste en rodamientos, motor o tarjeta lógica. Si sigues usando el equipo así, la falla puede extenderse y volverse más costosa. En Palmira revisamos si se resuelve con mantenimiento, ajuste de ciclo o reparación de componentes. Escríbenos por WhatsApp, cuéntanos desde cuándo pasa, qué detergente usas y si el equipo desagua con normalidad. Con esa información te orientamos antes de agendar la visita."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Más o menos cuánto puede costar la reparación?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El costo depende de tres factores: el tipo de equipo, la falla detectada y si requiere repuesto original. Lo más honesto es darte un estimado inicial y confirmarlo después del diagnóstico físico en domicilio o en taller. Antes de reparar, te explicamos qué tiene el equipo, qué se cambiaría si aplica y cuánto costaría el trabajo. No publicamos precios fijos porque cada caso es distinto: una nevera que no enfría no es lo mismo que una lavadora con falla en motor. Si tienes dudas sobre el valor, escríbenos por WhatsApp con el modelo y el síntoma y te orientamos sin compromiso."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Dan garantía en las reparaciones?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, damos garantía sobre el servicio realizado y los repuestos instalados. Te explicamos los términos específicos antes de realizar cualquier reparación."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué marcas y equipos revisan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Trabajamos con neveras, lavadoras, aires acondicionados y enfriadores comerciales de marcas líderes como Haceb, LG, Samsung, Whirlpool, Mabe, Centrales, Challenger, Electrolux y más. Si tienes un equipo de otra marca, consúltanos."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
 
-          <li class="process__item">
-            <div class="process__node">2</div>
-            <div class="process__content">
-              <div class="process-card__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 2v6h6"></path>
-                  <path d="M16 13H8"></path>
-                  <path d="M16 17H8"></path>
-                  <path d="M10 9H8"></path>
-                </svg>
-              </div>
-              <h3 class="process-card__title">Cotización transparente</h3>
-              <p class="process-card__text">Te damos una cotización clara antes de reparar. Te explicamos qué tiene, qué se cambia y cuánto cuesta.</p>
-            </div>
-          </li>
-
-          <li class="process__item">
-            <div class="process__node">3</div>
-            <div class="process__content">
-              <div class="process-card__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                  <path d="m9 12 2 2 4-4"></path>
-                </svg>
-              </div>
-              <h3 class="process-card__title">Reparación y garantía</h3>
-              <p class="process-card__text">Realizamos la reparación con repuestos de calidad, hacemos pruebas de funcionamiento y entregamos garantía por el trabajo realizado.</p>
-            </div>
-          </li>
-        </ol>
-
-        <div class="process__cta">
-          <p class="process__cta-text">¿Listo para agendar? Te respondemos rápido.</p>
-          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section services" aria-labelledby="services-title">
-      <div class="container services__container">
-        <h2 id="services-title" class="services__title">Servicio técnico en Palmira</h2>
-        <p class="services__subtitle">Reparación y mantenimiento a domicilio. Selecciona el servicio que necesitas.</p>
-        <p class="services__intro">Atendemos hogares, negocios y otros equipos de apoyo.</p>
-
-        <div class="services__grid">
-          <article class="services__card services__card--fridge">
-            <div class="services__media">
-              <img src="assets/img/gallery/neveras.webp" alt="Nevera y refrigeración" width="400" height="250" loading="lazy" decoding="async" />
-            </div>
-            <div class="services__body">
-              <h3 class="services__name">Neveras y Refrigeración</h3>
-              <p class="services__desc">Restaura el frío y conserva tus alimentos con servicio rápido y garantizado el mismo día.</p>
-              <details class="services__details">
-                <summary class="services__details-summary" aria-label="Ver detalles de Neveras y refrigeración">Ver detalles</summary>
-                <p class="services__micro">Reparación de neveras en Palmira a domicilio para equipos que no enfrían, no congelan o presentan fallas frecuentes.</p>
-              </details>
-              <a class="btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="services__card services__card--wash">
-            <div class="services__media">
-              <img src="assets/img/gallery/lavadora.webp" alt="Lavadora en reparación" width="400" height="250" loading="lazy" decoding="async" />
-            </div>
-            <div class="services__body">
-              <h3 class="services__name">Lavadoras</h3>
-              <p class="services__desc">Deja tu ropa impecable de nuevo. Reparación experta y solución a problemas de centrifugado.</p>
-              <details class="services__details">
-                <summary class="services__details-summary" aria-label="Ver detalles de Lavadoras">Ver detalles</summary>
-                <p class="services__micro">Reparación de lavadoras en Palmira para equipos que no centrifugan, no desaguan o presentan ruidos extraños.</p>
-              </details>
-              <a class="btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="services__card services__card--air">
-            <div class="services__media">
-              <img src="assets/img/gallery/aires.webp" alt="Aire acondicionado, mantenimiento y reparación" width="400" height="250" loading="lazy" decoding="async" />
-            </div>
-            <div class="services__body">
-              <h3 class="services__name">Aires Acondicionados</h3>
-              <p class="services__desc">Disfruta del clima ideal en tu hogar con nuestro mantenimiento y reparación profunda.</p>
-              <details class="services__details">
-                <summary class="services__details-summary" aria-label="Ver detalles de Aires acondicionados">Ver detalles</summary>
-                <p class="services__micro">Mantenimiento e instalación de aire acondicionado con revisión, limpieza y atención confiable en Palmira.</p>
-              </details>
-              <a class="btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="services__card services__card--maint">
-            <div class="services__media">
-              <img src="assets/img/gallery/mantenimiento.webp" alt="Mantenimiento preventivo de electrodomésticos" width="400" height="250" loading="lazy" decoding="async" />
-            </div>
-            <div class="services__body">
-              <h3 class="services__name">Mantenimiento Preventivo</h3>
-              <p class="services__desc">Alarga la vida útil de tus equipos y evita fallas costosas con revisiones periódicas.</p>
-              <details class="services__details">
-                <summary class="services__details-summary" aria-label="Ver detalles de Mantenimiento preventivo">Ver detalles</summary>
-                <p class="services__micro">Revisiones periódicas en Palmira para neveras, lavadoras y aires para evitar fallas costosas.</p>
-              </details>
-              <a class="btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-
-          <article class="services__card services__card--parts services__card--wide">
-            <div class="services__media">
-              <img src="assets/img/gallery/repuestos.webp" alt="Repuestos de línea blanca" width="400" height="250" loading="lazy" decoding="async" />
-            </div>
-            <div class="services__body">
-              <h3 class="services__name">Venta de Repuestos Originales</h3>
-              <p class="services__desc">Encuentra piezas genuinas para tus electrodomésticos. Ideal si eres técnico o quieres repararlo tú mismo.</p>
-              <details class="services__details">
-                <summary class="services__details-summary" aria-label="Ver detalles de Venta de repuestos">Ver detalles</summary>
-                <p class="services__micro">Venta de repuestos para equipos de línea blanca, ideal para técnicos o clientes que necesitan una pieza específica.</p>
-              </details>
-              <a class="btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="garantia" class="section garantia" aria-labelledby="garantia-title">
-      <div class="container">
-        <h2 id="garantia-title" class="garantia__title">Garantía y respaldo en cada servicio</h2>
-        <p class="garantia__subtitle">Trabajamos con diagnóstico claro, repuestos de calidad y garantía. Queremos que quedes tranquilo desde el primer contacto.</p>
-        <ul class="garantia__list" role="list">
-          <li class="garantia__item">
-            <span class="garantia__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-            </span>
-            Garantía por escrito
-          </li>
-          <li class="garantia__item">
-            <span class="garantia__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </span>
-            Pruebas de funcionamiento antes de entregar
-          </li>
-          <li class="garantia__item">
-            <span class="garantia__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </span>
-            Diagnóstico claro (sin sorpresas)
-          </li>
-          <li class="garantia__item">
-            <span class="garantia__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            Atención en Palmira y alrededores
-          </li>
-        </ul>
-        <p class="garantia__section-link">
-          <a href="#testimonials" class="link-internal">Ver reseñas de clientes</a>
-        </p>
-        <div class="garantia__cta">
-          <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="why" class="section why-block" aria-labelledby="why-title">
-      <div class="container why-block__inner">
-        <div class="why-block__content">
-          <span class="why-block__eyebrow" aria-hidden="true">RESPALDO REAL</span>
-          <h2 id="why-title" class="why-block__title">¿Por qué confiar en Línea Blanca?</h2>
-          <p class="why-block__desc">Atendemos con claridad, servicio a domicilio y soporte confiable para que te sientas tranquilo desde el primer contacto.</p>
-          <p class="why-block__support">Queremos que tengas una solución clara, rápida y con buena atención en Palmira.</p>
-          <span class="why-block__badge" aria-hidden="true">
-            <svg class="why-block__badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            Diagnóstico claro
-          </span>
-        </div>
-        <div class="why-block__grid" role="list">
-          <article class="why-block__card" role="listitem">
-            <span class="why-block__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M8 6l4-2 4 2"/></svg>
-            </span>
-            <h3 class="why-block__card-title">Taller y domicilio</h3>
-            <p class="why-block__card-text">Contamos con taller físico y también atendemos a domicilio según el tipo de equipo.</p>
-          </article>
-          <article class="why-block__card" role="listitem">
-            <span class="why-block__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
-            </span>
-            <h3 class="why-block__card-title">Diagnóstico claro</h3>
-            <p class="why-block__card-text">Revisamos tu equipo y te orientamos de forma clara antes de realizar el servicio.</p>
-          </article>
-          <article class="why-block__card" role="listitem">
-            <span class="why-block__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-            </span>
-            <h3 class="why-block__card-title">Garantía real</h3>
-            <p class="why-block__card-text">Respaldamos el servicio realizado y te explicamos cómo aplica en cada caso.</p>
-          </article>
-          <article class="why-block__card" role="listitem">
-            <span class="why-block__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            <h3 class="why-block__card-title">Atención confiable</h3>
-            <p class="why-block__card-text">Brindamos atención cercana y responsable para clientes en Palmira y sectores cercanos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-title">
-      <div class="container testimonials__container">
-        <h2 id="testimonials-title" class="testimonials__title">Clientes que ya confiaron en nosotros</h2>
-        <p class="testimonials__subtitle">Opiniones reales de quienes ya utilizaron nuestro servicio técnico en Palmira.</p>
-
-        <div class="testimonials__grid" role="list">
-          <article class="testimonial-card" role="listitem">
-            <div class="testimonial-card__stars" aria-hidden="true">
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-            </div>
-            <blockquote class="testimonial-card__quote">Muy buen servicio. Atienden muy rápido y manejan buenos precios. Recomendado.</blockquote>
-            <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">EL</span>
-              <div>
-                <cite class="testimonial-card__name">Edgar López</cite>
-                <p class="testimonial-card__meta">Reseña en Google</p>
-              </div>
-            </div>
-          </article>
-          <article class="testimonial-card" role="listitem">
-            <div class="testimonial-card__stars" aria-hidden="true">
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-            </div>
-            <blockquote class="testimonial-card__quote">La responsabilidad y la eficacia son de resaltar en el servicio que recibí. Sin lugar a dudas los recomiendo por su excelencia.</blockquote>
-            <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">CV</span>
-              <div>
-                <cite class="testimonial-card__name">Carmen Vázquez</cite>
-                <p class="testimonial-card__meta">Reseña en Google</p>
-              </div>
-            </div>
-          </article>
-          <article class="testimonial-card" role="listitem">
-            <div class="testimonial-card__stars" aria-hidden="true">
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-              <span class="testimonial-card__star">★</span>
-            </div>
-            <blockquote class="testimonial-card__quote">Super capacitados, profesionales sobre todo responsables; tienen personal competente y comprometido con su labor. Los recomiendo sin ninguna duda.</blockquote>
-            <div class="testimonial-card__author">
-              <span class="testimonial-card__avatar" aria-hidden="true">JD</span>
-              <div>
-                <cite class="testimonial-card__name">Jhoan Diaz</cite>
-                <p class="testimonial-card__meta">Reseña en Google</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="testimonials__source">Reseñas verificables en Google</p>
-        <div class="testimonials__google-wrap">
-          <a href="https://www.google.com/maps/place/Linea+Blanca,+centro+de+servicios+t%C3%A9cnicos/@3.524251,-76.2934326,17z/data=!4m8!3m7!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!8m2!3d3.5242456!4d-76.2908577!9m1!1b1!16s%2Fg%2F11xmfc1ss8?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" class="testimonials__google-link btn btn--ghost" target="_blank" rel="noopener noreferrer" aria-label="Ver más reseñas en Google de Línea Blanca">Ver más reseñas en Google</a>
-        </div>
-        <p class="testimonials__section-link">
-          <a href="#faq" class="link-internal">Ver preguntas frecuentes</a>
-        </p>
-
-        <div class="testimonials__stats" role="list">
-          <article class="stat-card" role="listitem">
-            <div class="stat-card__icon-wrap" aria-hidden="true">
-              <svg class="stat-card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-            </div>
-            <p class="stat-card__value">+10 Años</p>
-            <p class="stat-card__label">DE EXPERIENCIA REAL</p>
-            <span class="stat-card__badge stat-card__badge--green">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-              Líderes en el sector
-            </span>
-          </article>
-          <article class="stat-card" role="listitem">
-            <div class="stat-card__icon-wrap" aria-hidden="true">
-              <svg class="stat-card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <p class="stat-card__value">+2500</p>
-            <p class="stat-card__label">EQUIPOS REPARADOS</p>
-            <span class="stat-card__badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              Técnicos Certificados
-            </span>
-          </article>
-          <article class="stat-card" role="listitem">
-            <div class="stat-card__icon-wrap" aria-hidden="true">
-              <svg class="stat-card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <p class="stat-card__value">100%</p>
-            <p class="stat-card__label">GARANTÍA CERTIFICADA</p>
-            <span class="stat-card__badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Respaldo Total
-            </span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="galeria" class="section gallery" aria-labelledby="gallery-title">
-      <div class="container gallery__container">
-        <h2 id="gallery-title" class="gallery__title"><span class="gallery__title-short">Transparencia Total</span><span class="gallery__title-full">Así trabajamos en Palmira</span></h2>
-        <p class="gallery__subtitle">Equipo técnico real, taller propio y repuestos de calidad. Confía en expertos.</p>
-
-        <div class="slider-container" data-coverflow>
-          <button type="button" id="prevBtn" class="slider-nav-btn prev" aria-label="Anterior">&#10094;</button>
-          <button type="button" id="nextBtn" class="slider-nav-btn next" aria-label="Siguiente">&#10095;</button>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/1.webp" /><img src="assets/img/gallery/1.png" alt="Técnico reparando nevera" width="380" height="380" loading="eager" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/2.webp" /><img src="assets/img/gallery/2.png" alt="Técnico revisando lavadora" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/3.webp" /><img src="assets/img/gallery/3.png" alt="Técnico en taller" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/4.webp" /><img src="assets/img/gallery/4.png" alt="Fachada del local" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/5.webp" /><img src="assets/img/gallery/5.png" alt="Técnico mostrando repuesto" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/6.webp" /><img src="assets/img/gallery/6.png" alt="Servicio técnico a domicilio" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/7.webp" /><img src="assets/img/gallery/7.png" alt="Instalación de aire acondicionado" width="380" height="380" loading="lazy" decoding="async" /></picture>
-          <picture class="slide" data-slide><source type="image/webp" srcset="assets/img/gallery/8.webp" /><img src="assets/img/gallery/8.png" alt="Servicio a domicilio" width="380" height="380" loading="lazy" decoding="async" /></picture>
-
-          <div class="dots-wrapper" data-dots aria-label="Navegación por diapositivas">
-            <span class="dot" data-index="0" aria-label="Imagen 1"></span>
-            <span class="dot" data-index="1" aria-label="Imagen 2"></span>
-            <span class="dot" data-index="2" aria-label="Imagen 3"></span>
-            <span class="dot" data-index="3" aria-label="Imagen 4"></span>
-            <span class="dot" data-index="4" aria-label="Imagen 5"></span>
-            <span class="dot" data-index="5" aria-label="Imagen 6"></span>
-            <span class="dot" data-index="6" aria-label="Imagen 7"></span>
-            <span class="dot" data-index="7" aria-label="Imagen 8"></span>
-          </div>
-        </div>
-
-        <div class="gallery__cta">
-          <a href="https://www.instagram.com/reparacion_linea.blanca/" target="_blank" rel="noopener noreferrer" class="btn btn--instagram" aria-label="Instagram Línea Blanca">
-            <svg class="gallery__instagram-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            Ver más trabajos en Instagram
-          </a>
-          <p class="gallery__cta-note">
-            <svg class="gallery__check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            Actualizado semanalmente con nuevos proyectos en Palmira
+    <!-- Modales Legales -->
+    <div
+      id="modal-privacidad"
+      class="legal-modal"
+      aria-hidden="true"
+      aria-modal="true"
+      role="dialog"
+      aria-labelledby="modal-privacidad-title"
+    >
+      <div class="legal-modal__overlay" data-close-modal></div>
+      <div class="legal-modal__container">
+        <header class="legal-modal__header">
+          <h2 id="modal-privacidad-title" class="legal-modal__title">Política de Privacidad</h2>
+          <button
+            class="legal-modal__close"
+            type="button"
+            aria-label="Cerrar modal"
+            data-close-modal
+          >
+            &times;
+          </button>
+        </header>
+        <div class="legal-modal__content">
+          <p>
+            <strong>Responsable del Tratamiento de Datos:</strong> Línea Blanca Palmira (en
+            adelante, "La Empresa").
+          </p>
+          <p>
+            En cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013 en Colombia (Habeas
+            Data), informamos que los datos personales que nos suministre a través de este sitio web
+            o vía WhatsApp serán tratados de manera confidencial y segura.
+          </p>
+          <h3>1. Finalidades del tratamiento</h3>
+          <p>
+            Sus datos personales (nombre, teléfono, dirección/barrio, tipo de electrodoméstico y
+            detalles de la falla) serán utilizados para:
+          </p>
+          <ul>
+            <li>Coordinar el servicio técnico a domicilio y visitas de diagnóstico.</li>
+            <li>Generar cotizaciones estimadas y confirmación de presupuestos.</li>
+            <li>
+              Atender y hacer seguimiento a las solicitudes de garantía de los servicios prestados.
+            </li>
+            <li>Realizar control de calidad del servicio prestado.</li>
+          </ul>
+          <h3>2. Sus derechos</h3>
+          <p>
+            Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y
+            solicitar la supresión de sus datos personales en cualquier momento. Para ejercer estos
+            derechos, puede comunicarse con nosotros a nuestro canal oficial de WhatsApp
+            <strong>318 318 0948</strong> o a nuestro correo electrónico de contacto.
           </p>
         </div>
       </div>
-    </section>
-
-    <section id="faq" class="section faq" aria-labelledby="faq-title">
-      <div class="container faq__container">
-        <span class="faq__tag" aria-hidden="true">ANTES DE AGENDAR</span>
-        <h2 id="faq-title" class="faq__title">Resolvemos tus dudas antes de agendar</h2>
-        <p class="faq__subtitle">Estas son las preguntas más comunes. Si tu caso es diferente, escríbenos y te orientamos.</p>
-
-        <div class="faq__list" role="list">
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">01</span>
-              <span class="faq-item__question">¿Tienen servicio a domicilio en Palmira?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>Sí, atendemos a domicilio en Palmira y sectores cercanos. Si tienes dudas sobre cobertura en tu zona, puedes escribirnos por WhatsApp y te confirmamos.</p>
-            </div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">02</span>
-              <span class="faq-item__question">¿Cuánto cuesta la visita técnica?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>El valor puede variar según el equipo y la revisión necesaria. Escríbenos y te orientamos según tu caso.</p>
-            </div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">03</span>
-              <span class="faq-item__question">¿Dan garantía en las reparaciones?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>Sí, damos garantía sobre el servicio realizado. Si tienes alguna duda, te explicamos cómo aplica en tu caso.</p>
-            </div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">04</span>
-              <span class="faq-item__question">¿Qué hago si mi nevera no enfría o no congela?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>Lo mejor es no forzar el equipo y pedir una revisión. Atendemos neveras en Palmira con fallas de enfriamiento, congelación y otros problemas frecuentes.</p>
-            </div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">05</span>
-              <span class="faq-item__question">¿Qué hago si la lavadora no centrifuga o no desagua?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>Son fallas comunes y pueden tener varias causas. Revisamos lavadoras a domicilio en Palmira para detectar el problema y darte una solución clara.</p>
-            </div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary class="faq-item__summary">
-              <span class="faq-item__num">06</span>
-              <span class="faq-item__question">¿Qué marcas y equipos revisan?</span>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-item__content">
-              <p>Trabajamos con neveras, lavadoras, aires y otros equipos de línea blanca, según el tipo de servicio requerido.</p>
-            </div>
-          </details>
-        </div>
-
-        <div class="faq__cta">
-          <div class="faq__cta-text">
-            <strong class="faq__cta-title">¿Tienes más dudas?</strong>
-            <p class="faq__cta-desc">Estamos disponibles para orientarte.</p>
-          </div>
-          <a class="faq__cta-btn btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="location" class="section location" aria-labelledby="location-title">
-      <div class="location__shell">
-        <div class="container location__container">
-          <div class="location__main">
-            <header class="location__header">
-              <span class="location__eyebrow" aria-hidden="true">UBICACIÓN Y COBERTURA</span>
-              <h2 id="location-title" class="location__title">Visítanos o te visitamos</h2>
-              <p class="location__lead">Tenemos taller físico en Palmira y también atendemos a domicilio en zonas cercanas.</p>
-              <p class="location__support">Estamos listos para atenderte en nuestro punto físico o coordinar servicio técnico hasta tu ubicación.</p>
-            </header>
-
-            <div class="location__info-grid" role="list">
-              <article class="location__info-card" role="listitem">
-                <span class="location__info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </span>
-                <h3 class="location__info-title">Taller principal</h3>
-                <p class="location__info-text">Cl. 28 #Cr18-27, Esquina Local 4, Palmira</p>
-              </article>
-              <article class="location__info-card" role="listitem">
-                <span class="location__info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </span>
-                <h3 class="location__info-title">Horarios</h3>
-                <p class="location__info-text">Lun–Vie 8–12 / 2–5 · Sáb 8–12</p>
-              </article>
-              <article class="location__info-card" role="listitem">
-                <span class="location__info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                </span>
-                <h3 class="location__info-title">Servicio</h3>
-                <p class="location__info-text">Atención en taller y servicio técnico a domicilio</p>
-              </article>
-              <article class="location__info-card" role="listitem">
-                <span class="location__info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                </span>
-                <h3 class="location__info-title">Cobertura</h3>
-                <p class="location__info-text">Palmira y sectores cercanos</p>
-              </article>
-            </div>
-
-            <div class="location__cta-wrap">
-              <a class="btn btn--primary" href="https://www.google.com/maps/dir//Cl.+28+%23Cr18-27,+Palmira,+Valle+del+Cauca/@4.6575715,-74.1122502,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e3a0596e03e0981:0xad48e80ced7be2c5!2m2!1d-76.2908577!2d3.5242456?entry=ttu" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación de Línea Blanca en Google Maps">Abrir en Google Maps</a>
-            </div>
-          </div>
-
-          <div class="location__map-panel">
-            <div class="location__map-frame">
-              <iframe
-                class="location__map"
-                title="Ubicación Línea Blanca - Cl. 28 #Cr18-27, Esquina Local 4, Palmira"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1183.9366622458529!2d-76.29113861494592!3d3.524408227777914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a0596e03e0981%3A0xad48e80ced7be2c5!2sLinea%20Blanca%2C%20centro%20de%20servicios%20t%C3%A9cnicos!5e0!3m2!1ses!2sco!4v1764198876104!5m2!1ses!2sco"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="location__coverage-bar">
-            <h3 class="location__coverage-title">Cobertura en <span class="location__spot">Palmira</span> y sectores cercanos</h3>
-            <p class="location__coverage-text">Si tienes dudas sobre tu zona, escríbenos por WhatsApp y te confirmamos disponibilidad.</p>
-            <div class="location__coverage-chips">
-              <span class="location__coverage-chip location__coverage-chip--spot">Palmira</span>
-              <span class="location__coverage-chip">Atención a domicilio</span>
-              <span class="location__coverage-chip">Cobertura local</span>
-              <span class="location__coverage-chip">Zonas cercanas</span>
-            </div>
-          </div>
-
-          <div class="location__closure">
-            <h3 class="location__closure-title">¿Necesitas ayuda con tu nevera o lavadora?</h3>
-            <p class="location__closure-desc">Atendemos en Palmira y sectores cercanos con servicio técnico a domicilio, diagnóstico claro y atención confiable.</p>
-            <div class="location__closure-cta">
-              <a class="btn btn--primary" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-              <a class="btn btn--ghost" href="tel:+573183180948">Llamar ahora</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a class="footer__logo" href="#top" aria-label="Ir al inicio">
-          <img src="assets/img/logos/logo-original.svg" alt="Línea Blanca" width="160" height="54" class="footer__logo-img" loading="lazy" decoding="async" />
-        </a>
-        <p class="footer__desc">Expertos en reparación de línea blanca en Palmira. Recuperamos la vida útil de tus electrodomésticos con garantía.</p>
-        <div class="footer__social">
-          <a href="https://www.facebook.com/reparar.lineablanca" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook Línea Blanca">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/reparacion_linea.blanca/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram Línea Blanca">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer__services">
-        <h2 class="footer__title">Nuestros Servicios</h2>
-        <ul class="footer__list" role="list">
-          <li><a href="#services">Lavadoras</a></li>
-          <li><a href="#services">Neveras</a></li>
-          <li><a href="#services">Aires Acondicionados</a></li>
-          <li><a href="#services">Venta de Repuestos</a></li>
-        </ul>
-      </div>
-      <div class="footer__contact">
-        <h2 class="footer__title">Contáctanos</h2>
-        <ul class="footer__contact-list" role="list">
-          <li>
-            <svg class="footer__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Cl. 28 #Cr18-27, Esquina Local 4, Palmira</span>
-          </li>
-          <li>
-            <svg class="footer__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+573183180948">Llamar ahora</a>
-          </li>
-          <li>
-            <svg class="footer__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:contacto@lineablanca.com">contacto@lineablanca.com</a>
-          </li>
-        </ul>
-      </div>
     </div>
-    <div class="footer__bottom">
-      <div class="container footer__bottom-inner">
-        <p class="footer__copy">© 2025 Línea Blanca. Todos los derechos reservados.</p>
-        <div class="footer__legal">
-          <a href="#">Política de Privacidad</a>
-          <span class="footer__sep">|</span>
-          <a href="#">Términos y Condiciones</a>
+
+    <div
+      id="modal-terminos"
+      class="legal-modal"
+      aria-hidden="true"
+      aria-modal="true"
+      role="dialog"
+      aria-labelledby="modal-terminos-title"
+    >
+      <div class="legal-modal__overlay" data-close-modal></div>
+      <div class="legal-modal__container">
+        <header class="legal-modal__header">
+          <h2 id="modal-terminos-title" class="legal-modal__title">Términos y Condiciones</h2>
+          <button
+            class="legal-modal__close"
+            type="button"
+            aria-label="Cerrar modal"
+            data-close-modal
+          >
+            &times;
+          </button>
+        </header>
+        <div class="legal-modal__content">
+          <p>
+            Bienvenido al sitio web de Línea Blanca Palmira. Al acceder y utilizar nuestros
+            servicios, usted acepta cumplir con los siguientes términos y condiciones:
+          </p>
+          <h3>1. Objeto del servicio</h3>
+          <p>
+            Línea Blanca Palmira ofrece servicios técnicos de diagnóstico, mantenimiento y
+            reparación a domicilio e instalaciones de electrodomésticos en la ciudad de Palmira y
+            alrededores. Asimismo, realizamos venta de repuestos originales.
+          </p>
+          <h3>2. Diagnóstico y estimaciones</h3>
+          <p>
+            El valor de la reparación se determinará posterior a la visita de diagnóstico técnico
+            físico. Cualquier estimado inicial brindado por WhatsApp o llamada tiene carácter
+            informativo preliminar basado en la descripción del cliente y no constituye una oferta
+            final vinculante.
+          </p>
+          <h3>3. Garantías de servicio</h3>
+          <p>
+            Todas las reparaciones cuentan con una garantía por escrito que cubre exclusivamente el
+            trabajo realizado y los repuestos sustituidos durante el período indicado en la orden de
+            servicio. La garantía no cubre daños causados por mal uso, fluctuaciones eléctricas o
+            intervenciones de terceros.
+          </p>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Barra sticky inferior solo móvil: Agendar (WhatsApp) + Llamar -->
-  <div class="sticky-cta" data-nosnippet>
-    <a class="sticky-cta__btn btn btn--primary btn--small" href="https://wa.me/573183180948?text=Hola,%20quiero%20cotizar%20y%20agendar%20en%20Palmira" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">WhatsApp</a>
-    <a class="sticky-cta__btn btn btn--ghost btn--small" href="tel:+573183180948" aria-label="Llamar ahora">Llamar ahora</a>
-  </div>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "HomeAndConstructionBusiness",
-      "@id": "https://www.lineablancapalmira.com/#business",
-      "name": "Línea Blanca, centro de servicios técnicos",
-      "url": "https://www.lineablancapalmira.com/",
-      "telephone": "+573183180948",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Cl. 28 #Cr18-27, Esquina Local 4",
-        "addressLocality": "Palmira",
-        "addressRegion": "Valle del Cauca",
-        "addressCountry": "CO"
-      },
-      "openingHours": "Mo-Fr 08:00-12:00,14:00-17:00; Sa 08:00-12:00",
-      "image": "https://www.lineablancapalmira.com/assets/img/logos/logo-original.svg",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Palmira"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.lineablancapalmira.com/#service",
-      "name": "Servicio técnico de línea blanca en Palmira",
-      "provider": {
-        "@id": "https://www.lineablancapalmira.com/#business"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Palmira"
-      },
-      "serviceType": [
-        "Neveras y refrigeración",
-        "Lavadoras",
-        "Aires acondicionados",
-        "Mantenimiento preventivo",
-        "Venta de repuestos originales"
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.lineablancapalmira.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Tienen servicio a domicilio en Palmira?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, atendemos a domicilio en Palmira y sectores cercanos. Si tienes dudas sobre cobertura en tu zona, puedes escribirnos por WhatsApp y te confirmamos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto cuesta la visita técnica?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El valor puede variar según el equipo y la revisión necesaria. Escríbenos y te orientamos según tu caso."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Dan garantía en las reparaciones?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, damos garantía sobre el servicio realizado. Si tienes alguna duda, te explicamos cómo aplica en tu caso."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué hago si mi nevera no enfría o no congela?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Lo mejor es no forzar el equipo y pedir una revisión. Atendemos neveras en Palmira con fallas de enfriamiento, congelación y otros problemas frecuentes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué hago si la lavadora no centrifuga o no desagua?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Son fallas comunes y pueden tener varias causas. Revisamos lavadoras a domicilio en Palmira para detectar el problema y darte una solución clara."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué marcas y equipos revisan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Trabajamos con neveras, lavadoras, aires y otros equipos de línea blanca, según el tipo de servicio requerido."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-  <script src="js/analytics.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-  <script src="js/main.js" type="module" defer></script>
-
+    <script src="js/analytics.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
   </body>
-
 </html>
